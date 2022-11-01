@@ -1,0 +1,16 @@
+C:\Users\bobici\source\repos\vvs-zad1\vvs zad1\bin\Debug\net5.0\vvs zad1.exe
+C:\Users\bobici\source\repos\vvs-zad1\vvs zad1\bin\Debug\net5.0\vvs zad1.deps.json
+C:\Users\bobici\source\repos\vvs-zad1\vvs zad1\bin\Debug\net5.0\vvs zad1.runtimeconfig.json
+C:\Users\bobici\source\repos\vvs-zad1\vvs zad1\bin\Debug\net5.0\vvs zad1.runtimeconfig.dev.json
+C:\Users\bobici\source\repos\vvs-zad1\vvs zad1\bin\Debug\net5.0\vvs zad1.dll
+C:\Users\bobici\source\repos\vvs-zad1\vvs zad1\bin\Debug\net5.0\vvs zad1.pdb
+C:\Users\bobici\source\repos\vvs-zad1\vvs zad1\obj\Debug\net5.0\vvs zad1.csproj.AssemblyReference.cache
+C:\Users\bobici\source\repos\vvs-zad1\vvs zad1\obj\Debug\net5.0\vvs zad1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bobici\source\repos\vvs-zad1\vvs zad1\obj\Debug\net5.0\vvs zad1.AssemblyInfoInputs.cache
+C:\Users\bobici\source\repos\vvs-zad1\vvs zad1\obj\Debug\net5.0\vvs zad1.AssemblyInfo.cs
+C:\Users\bobici\source\repos\vvs-zad1\vvs zad1\obj\Debug\net5.0\vvs zad1.csproj.CoreCompileInputs.cache
+C:\Users\bobici\source\repos\vvs-zad1\vvs zad1\obj\Debug\net5.0\vvs zad1.dll
+C:\Users\bobici\source\repos\vvs-zad1\vvs zad1\obj\Debug\net5.0\refint\vvs zad1.dll
+C:\Users\bobici\source\repos\vvs-zad1\vvs zad1\obj\Debug\net5.0\vvs zad1.pdb
+C:\Users\bobici\source\repos\vvs-zad1\vvs zad1\obj\Debug\net5.0\vvs zad1.genruntimeconfig.cache
+C:\Users\bobici\source\repos\vvs-zad1\vvs zad1\obj\Debug\net5.0\ref\vvs zad1.dll
