@@ -24,6 +24,10 @@ namespace vvs_zad1
         {
             return jik;
         }
+        public void setGlasao(bool t)
+        {
+            glasao = t;
+        }
         public bool getGlasao()
         {
             return glasao;
