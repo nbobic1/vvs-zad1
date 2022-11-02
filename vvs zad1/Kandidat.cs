@@ -16,6 +16,8 @@ namespace vvs_zad1
             this.ime = ime;
             this.prezime = prezime;
         }   
+        public int brojG()
+        { return broj_glasova; }
         public string getIme()
         {
             return ime;

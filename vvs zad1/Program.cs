@@ -11,6 +11,55 @@ namespace vvs_zad1
         static List<Kandidat> sda = new List<Kandidat>();
         static List<Kandidat> nezavisni=new List<Kandidat>();
         static List<Tuple<List<Kandidat>,string>> stranke = new List<Tuple<List<Kandidat>,string>>();  
+        public static int brojGlasova()
+        {
+            return glasaci.FindAll(x=>x.getGlasao()).Count;
+        }
+        public static List<Tuple<String,int>> statistika()
+        {
+            List < Tuple<String, int> > stat= new List < Tuple<String, int> >();
+
+            int g = glasaci.Count;
+           
+            for(int i=0;i<stranke.Count;i++)
+            {
+                List<Kandidat> t = stranke[i].Item1;
+                   string s=stranke[i].Item2;
+                int z = 0;
+                for (int j = 0; j < t.Count;j++)
+                {
+                    string ert = s + "-" + t[j].getIme() + " " + t[j].getPrezime();
+                    stat.Add(new Tuple<string, int>(ert, (t[j].brojG()*100)/g));
+                    z += t[j].brojG();
+                }
+                stat.Add(new Tuple<string, int>(stranke[i].Item2, (z*100)/g)); 
+            }
+            return stat;
+        }
+        public static void statistikaIspis()
+        {   
+            if(brojGlasova()==0)
+            {
+                Console.WriteLine("niko jos nije glasao");
+                return;
+            }
+            int g = brojGlasova();
+            for (int i = 0; i < stranke.Count; i++)
+            {
+                List<Kandidat> t = stranke[i].Item1;
+                string s = stranke[i].Item2;
+                int z = 0;
+                for (int j = 0; j < t.Count; j++)
+                {
+                    string ert = s + "-" + t[j].getIme() + " " + t[j].getPrezime();
+                   Console.WriteLine(ert+" "+ ((t[j].brojG() * 100) / g)+"%");
+                    z += t[j].brojG();
+                }
+                Console.WriteLine(stranke[i].Item2+" "+ ((z * 100) / g)+"%");
+            }
+            Console.WriteLine("Ukupna izlaznost: " + ((brojGlasova()*100) / glasaci.Count));
+
+        }
         static void Main(string[] args)
         {
             glasaci.Add(new Glasac("Cigarettes", "After", "Keks", "Sweet", false));
@@ -113,7 +162,7 @@ namespace vvs_zad1
                 }
                 else if (k == 2)
                 {
-
+                    statistikaIspis();
                 }
                 else if (k == 3)
                 {
