@@ -56,6 +56,8 @@ namespace vvs_zad1
                 for (int j = 0; j < t.Count; j++)
                 {
                     string ert = s + "-" + t[j].getIme() + " " + t[j].getPrezime();
+
+
                     if (t[j].brojG() / z > 0.2)
                         pobjedniciK.Add(t[j]);
                   
