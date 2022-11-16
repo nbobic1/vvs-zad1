@@ -173,7 +173,7 @@ namespace vvs_zad1
                 {
                     Console.WriteLine("Unesite Vaš jedinstveni identifikacioni kod: ");
                     string s = Console.ReadLine();
-                    int t = glasaci.FindIndex(gl => gl.getJik() == s);
+                    int t = glasaci.FindIndex(gl => gl.getidentifikacijskiKod() == s);
                     if (t == -1)
                     {
                         Console.WriteLine("Niste registrirani u ovom biračkom mjestu");

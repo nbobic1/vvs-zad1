@@ -8,7 +8,8 @@ namespace vvs_zad1
 {
     internal class Kandidat
     {
-        string ime, prezime;
+        private string ime;
+        private string prezime;
         int broj_glasova;
         public Kandidat(string ime, string prezime)
         {

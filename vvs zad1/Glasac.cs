@@ -10,19 +10,19 @@ namespace vvs_zad1
     internal class Glasac
     {
         bool glasao;
-        string ime, prezime, adresa, jik, datumRodjenja;
+        string ime, prezime, adresa, identifikacijskiKod, datumRodjenja;
         public Glasac(string ime, string prezime, string adresa, string datumRodjenja, bool glasao=false)
         {
             this.ime = ime;
             this.prezime = prezime;
             this.adresa = adresa;
             this.datumRodjenja = datumRodjenja;
-            this.jik = ime.Substring(0, 2) + prezime.Substring(0, 2) + adresa.Substring(0, 2) + datumRodjenja.Substring(0, 2);
+            this.identifikacijskiKod = ime.Substring(0, 2) + prezime.Substring(0, 2) + adresa.Substring(0, 2) + datumRodjenja.Substring(0, 2);
             this.glasao = glasao;
         }
-        public string getJik()
+        public string getidentifikacijskiKod()
         {
-            return jik;
+            return identifikacijskiKod;
         }
         public void setGlasao(bool t)
         {
