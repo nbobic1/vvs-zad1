@@ -36,8 +36,8 @@ namespace vvs_zad1
                 for (int j = 0; j < t.Count; j++)
                 {
                     string ert = s + "-" + t[j].getIme() + " " + t[j].getPrezime();
-                    stat.Add(new Tuple<string, int>(ert, (t[j].brojG() * 100) / g));
-                    z += t[j].brojG();
+                    stat.Add(new Tuple<string, int>(ert, (t[j].getBroj_glasova() * 100) / g));
+                    z += t[j].getBroj_glasova();
                 }
                 stat.Add(new Tuple<string, int>(stranke[i].Item2, (z * 100) / g));
             }
@@ -52,13 +52,13 @@ namespace vvs_zad1
                 string s = stranke[i].Item2;
                 int z = 0;
                 for (int j = 0; j < t.Count; j++)
-                    z += t[j].brojG();
+                    z += t[j].getBroj_glasova();
                 for (int j = 0; j < t.Count; j++)
                 {
                     string ert = s + "-" + t[j].getIme() + " " + t[j].getPrezime();
 
 
-                    if (t[j].brojG() / z > 0.2)
+                    if (t[j].getBroj_glasova() / z > 0.2)
                         pobjedniciK.Add(t[j]);
 
                 }
@@ -80,14 +80,14 @@ namespace vvs_zad1
                 string s = stranke[i].Item2;
                 int z = 0;
                 for (int j = 0; j < t.Count; j++)
-                    z += t[j].brojG();
+                    z += t[j].getBroj_glasova();
                 for (int j = 0; j < t.Count; j++)
                 {
                     string ert = s + "-" + t[j].getIme() + " " + t[j].getPrezime();
-                    if (t[j].brojG() / z > 0.2)
-                        Console.WriteLine(ert + " " + ((t[j].brojG() * 100) / z) + "% -osvaja mandat");
+                    if (t[j].getBroj_glasova() / z > 0.2)
+                        Console.WriteLine(ert + " " + ((t[j].getBroj_glasova() * 100) / z) + "% -osvaja mandat");
                     else
-                        Console.WriteLine(ert + " " + ((t[j].brojG() * 100) / z) + "%");
+                        Console.WriteLine(ert + " " + ((t[j].getBroj_glasova() * 100) / z) + "%");
 
                 }
                 if (z / g > 0.02)
