@@ -21,6 +21,7 @@ namespace vvs_zad1
         { return broj_glasova; }
         public string getIme()
         {
+
             return ime;
         }
         public string getPrezime()
