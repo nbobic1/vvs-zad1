@@ -11,7 +11,7 @@ namespace vvs_zad1
     {
         bool glasao;
         string ime, prezime, adresa, jik, datumRodjenja;
-        public Glasac(string ime, string prezime, string adresa, string datumRodjenja, bool glasao)
+        public Glasac(string ime, string prezime, string adresa, string datumRodjenja, bool glasao=false)
         {
             this.ime = ime;
             this.prezime = prezime;
