@@ -17,6 +17,7 @@ namespace vvs_zad1
             this.prezime = prezime;
             this.adresa = adresa;
             this.datumRodjenja = datumRodjenja;
+            if(ime.Length>=2&&prezime.Length>=2&&adresa.Length>=2&&datumRodjenja.Length>=2) 
             this.identifikacijskiKod = ime.Substring(0, 2) + prezime.Substring(0, 2) + adresa.Substring(0, 2) + datumRodjenja.Substring(0, 2);
             this.glasao = glasao;
         }

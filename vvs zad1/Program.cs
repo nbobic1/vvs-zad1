@@ -10,12 +10,6 @@ namespace vvs_zad1
     {
         static List<Glasac> glasaci = new List<Glasac>();
         static List<Kandidat> pobjedniciK = new List<Kandidat>();
-        static List<Kandidat> sda = new List<Kandidat>();
-        static List<Kandidat> sdp = new List<Kandidat>();
-        static List<Kandidat> hdz = new List<Kandidat>();
-        static List<Kandidat> asda = new List<Kandidat>();
-        static List<Kandidat> pomak = new List<Kandidat>();
-        static List<Kandidat> nezavisni = new List<Kandidat>();
         static List<Tuple<List<Kandidat>, string>> stranke = new List<Tuple<List<Kandidat>, string>>();
         static List<Tuple<List<Kandidat>, string>> pobjedniciS = new List<Tuple<List<Kandidat>, string>>();
         public static int brojGlasova()
@@ -57,8 +51,8 @@ namespace vvs_zad1
                 {
                     string ert = s + "-" + t[j].getIme() + " " + t[j].getPrezime();
 
-
-                    if (t[j].getBroj_glasova() / z > 0.2)
+                    
+                    if (z!=0&&t[j].getBroj_glasova() / z > 0.2)
                         pobjedniciK.Add(t[j]);
 
                 }
@@ -116,6 +110,12 @@ namespace vvs_zad1
             glasaci.Add(new Glasac("Mahir", "Fatić", "Tešanjska 12", "02.06.2001."));
 
 
+             List<Kandidat> sda = new List<Kandidat>();
+            List<Kandidat> sdp = new List<Kandidat>();
+           List<Kandidat> hdz = new List<Kandidat>();
+             List<Kandidat> asda = new List<Kandidat>();
+            List<Kandidat> pomak = new List<Kandidat>();
+             List<Kandidat> nezavisni = new List<Kandidat>();
 
             sda.Add(new Kandidat("Hasnija", "Bulić"));
             sda.Add(new Kandidat("Aki", "Akić"));
@@ -168,6 +168,7 @@ namespace vvs_zad1
                 Console.WriteLine("Ako želite glasati unesite 1");
                 Console.WriteLine("Ako želite vidjeti statistiku unesite 2");
                 Console.WriteLine("Ako želite izaci iz app unesite 3");
+                Console.WriteLine("Ako želite restartovati glasanje za glasaca unesite 4");
                 int k = Convert.ToInt32(Console.ReadLine());
                 if (k == 1)
                 {
@@ -264,6 +265,40 @@ namespace vvs_zad1
                 else if (k == 2)
                 {
                     statistikaIspis();
+                }
+                else if(k==4)
+                {
+                    Console.WriteLine("Unesite jedinstveni identifikacioni kod glasaca za kojeg zelite restartovati glasanje: ");
+                    string s = Console.ReadLine();
+                    int t = glasaci.FindIndex(gl => gl.getidentifikacijskiKod() == s);
+                    if (t == -1)
+                    {
+                        Console.WriteLine("Niste registrirani u ovom biračkom mjestu");
+                    }
+                    else if (glasaci[t].getGlasao() == false) 
+                    {
+                        Console.WriteLine("Glasac nije glasao");
+                    }
+                    else
+                    {
+                        for(int zc=0;zc<3;zc++)
+                        {
+
+                            Console.WriteLine("Unesite sifru za restart:");
+                            if (Console.ReadLine() == "VVS20222023")
+                            {
+                                glasaci[t].setGlasao(false);
+                                break;
+                               }
+                            else
+                                Console.WriteLine("Neispravna sifra");
+                               if(zc==2)
+                            {
+                                Console.WriteLine("Tri puta unesena pogresna sifra, GRESKA!!");
+                                return;
+                            }
+                        }
+                    }
                 }
                 else if (k == 3)
                     break;
