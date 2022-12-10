@@ -8,6 +8,12 @@ namespace vvs_zad1
 {
     internal class Program
     {
+        static int sdaIs = 0;
+        static int sdpIs = 0;
+        static int hdzIs = 0;
+        static int nezavisniIs = 0;
+        static int asdaIs = 0;
+        static int pomakIs = 0;
         static List<Glasac> glasaci = new List<Glasac>();
         static List<Kandidat> pobjedniciK = new List<Kandidat>();
         static List<Tuple<List<Kandidat>, string>> stranke = new List<Tuple<List<Kandidat>, string>>();
@@ -78,6 +84,7 @@ namespace vvs_zad1
                 for (int j = 0; j < t.Count; j++)
                 {
                     string ert = s + "-" + t[j].getIme() + " " + t[j].getPrezime();
+                    
                     if (t[j].getBroj_glasova() / z > 0.2)
                         Console.WriteLine(ert + " " + ((t[j].getBroj_glasova() * 100) / z) + "% -osvaja mandat");
                     else
@@ -153,13 +160,84 @@ namespace vvs_zad1
             nezavisni.Add(new Kandidat("Bull", "Pit"));
             nezavisni.Add(new Kandidat("Vojage", "Breskvica"));
             stranke.Add(new Tuple<List<Kandidat>, string>(sda, "sda"));
-            stranke.Add(new Tuple<List<Kandidat>, string>(nezavisni, "nezavisni"));
             stranke.Add(new Tuple<List<Kandidat>, string>(pomak, "Pomak"));
             stranke.Add(new Tuple<List<Kandidat>, string>(sdp, "Sdp"));
             stranke.Add(new Tuple<List<Kandidat>, string>(asda, "asda"));
             stranke.Add(new Tuple<List<Kandidat>, string>(hdz, "hdz"));
+            stranke.Add(new Tuple<List<Kandidat>, string>(nezavisni, "nezavisni"));
 
         }
+
+        public static void IspisStranaka()
+        {
+            int brojMandata = 0;
+            if (brojGlasova() == 0)
+            {
+                Console.WriteLine("niko jos nije glasao");
+                return;
+            }
+            int brojUkupnihGlasova = brojGlasova();
+            Console.WriteLine("GLasano do ovog trenutka: " + brojUkupnihGlasova + " puta.");
+            Console.WriteLine("Statistika stranaka: ");
+            Console.WriteLine();
+            for (int i = 0; i < stranke.Count; i++)
+            {
+                brojMandata = 0;
+                string imeStranke = stranke[i].Item2;
+                int glasoviZaKandidata = 0;
+                List<Kandidat> kandidatiStranke = stranke[i].Item1;
+                
+                for (int j = 0; j < kandidatiStranke.Count; j++)
+                {
+                    glasoviZaKandidata += kandidatiStranke[j].getBroj_glasova();
+                }
+                //ispisujem za stranke
+                if (imeStranke.ToLower() == "sda")
+                {
+                    Console.WriteLine(stranke[i].Item2 + " osvojenih glasova: " + sdaIs + " , a to je " + (sdaIs*100)/brojUkupnihGlasova + "%.");
+                }
+                else if (imeStranke.ToLower() == "sdp")
+                {
+                    Console.WriteLine(stranke[i].Item2 + " osvojenih glasova: " + sdpIs + " , a to je " + (sdpIs * 100) / brojUkupnihGlasova + "%.");
+                }
+                else if (imeStranke.ToLower() == "hdz")
+                {
+                    Console.WriteLine(stranke[i].Item2 + " osvojenih glasova: " + hdzIs + " , a to je " + (hdzIs * 100) / brojUkupnihGlasova + "%.");
+                }
+                else if (imeStranke.ToLower() == "pomak")
+                {
+                    Console.WriteLine(stranke[i].Item2 + " osvojenih glasova: " + pomakIs+ " , a to je " + (pomakIs * 100) / brojUkupnihGlasova + "%.");
+                }
+                else if (imeStranke.ToLower() == "nezavisni")
+                {
+                    Console.WriteLine(stranke[i].Item2 +": ");
+                }
+                else if (imeStranke.ToLower() == "asda")
+                {
+                    Console.WriteLine(stranke[i].Item2 + " osvojenih glasova: " + asdaIs + " , a to je " + (asdaIs * 100) / brojUkupnihGlasova + "%.");
+                }
+                for (int j = 0; j < kandidatiStranke.Count; j++)
+                {
+                    string ert = imeStranke + "-" + kandidatiStranke[j].getIme() + " " + kandidatiStranke[j].getPrezime();
+                    if (glasoviZaKandidata == 0)
+                    {
+                        Console.WriteLine(ert + " osvojio je " + kandidatiStranke[j].getBroj_glasova() + " glasova ,a to je: 0%.");
+                    } 
+                    else if (((kandidatiStranke[j].getBroj_glasova() * 100) / glasoviZaKandidata) > 20)
+                    {
+                        Console.WriteLine(ert + " osvojio je " + kandidatiStranke[j].getBroj_glasova() + " glasova ,a to je: " + ((kandidatiStranke[j].getBroj_glasova() * 100) / glasoviZaKandidata) + "% -osvaja mandat");
+                        brojMandata += 1;
+
+                    }
+                    else
+                        Console.WriteLine(ert + " osvojio je " + kandidatiStranke[j].getBroj_glasova() + " glasova ,a to je: " + ((kandidatiStranke[j].getBroj_glasova() * 100) / glasoviZaKandidata) + "%");
+                }
+                Console.WriteLine("Stranka je osvojila: " + brojMandata + " mandata.");
+                Console.WriteLine();
+
+            }
+        }
+
         static void Main(string[] args)
         {
             pod();
@@ -169,6 +247,7 @@ namespace vvs_zad1
                 Console.WriteLine("Ako želite vidjeti statistiku unesite 2");
                 Console.WriteLine("Ako želite izaci iz app unesite 3");
                 Console.WriteLine("Ako želite restartovati glasanje za glasaca unesite 4");
+                Console.WriteLine("Ako želite vidjeti trenutno stanje glasnja za stranke unesite 5 ");
                 int k = Convert.ToInt32(Console.ReadLine());
                 if (k == 1)
                 {
@@ -191,7 +270,7 @@ namespace vvs_zad1
                                 {
 
                                     Console.WriteLine("Nezavisni kadnidati:");
-                                    for (int t3 = i; t3 < stranke[i].Item1.Count + i; t3 += i)
+                                    for (int t3 = i; t3 < stranke[i].Item1.Count + i; t3 += 1)
                                     {
                                         Console.WriteLine(t3 + " " + stranke[i].Item1[t3 - i].getIme() + " " + stranke[i].Item1[t3 - i].getPrezime());
                                     }
@@ -209,6 +288,27 @@ namespace vvs_zad1
                                 }
                                 else
                                 {
+                                    string imeStranke = stranke[zu].Item2;
+                                    if (imeStranke.ToLower() == "sda")
+                                    {
+                                        sdaIs++;
+                                    }
+                                    else if (imeStranke.ToLower() == "sdp")
+                                    {
+                                        sdpIs++;
+                                    }
+                                    else if (imeStranke.ToLower() == "hdz")
+                                    {
+                                        hdzIs++;
+                                    }
+                                    else if (imeStranke.ToLower() == "pomak")
+                                    {
+                                       pomakIs++;
+                                    }
+                                    else if (imeStranke.ToLower() == "asda")
+                                    {
+                                        asdaIs++;
+                                    }
                                     break;
                                 }
                             }
@@ -299,6 +399,10 @@ namespace vvs_zad1
                             }
                         }
                     }
+                }
+                else if (k == 5)
+                {
+                    IspisStranaka();
                 }
                 else if (k == 3)
                     break;
