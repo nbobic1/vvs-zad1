@@ -21,6 +21,8 @@ namespace vvs_zad1
                 throw new Exception("Glasač je već izvršio glasanje!");
             return true;
         }
+
+        //Esma Dervisevic, 18923
         public bool validirajPodatke(string ime, string prezime, string adresa, string datumRodjenja, string brojLicneKarte, string maticniBroj)
         {
             /*Ime i prezime smiju sadržavati samo slova i crticu, a ostale vrste karaktera nisu dozvoljene. */
@@ -95,8 +97,6 @@ namespace vvs_zad1
             this.prezime = prezime;
             this.adresa = adresa;
             this.datumRodjenja = datumRodjenja;
-            if (ime.Length >= 2 && prezime.Length >= 2 && adresa.Length >= 2 && datumRodjenja.Length >= 2)
-                this.identifikacijskiKod = ime.Substring(0, 2) + prezime.Substring(0, 2) + adresa.Substring(0, 2) + datumRodjenja.Substring(0, 2) + brojLicneKarte.Substring(0, 2) + maticniBroj.Substring(0, 2);
             this.glasao = glasao;
         }
         public string getidentifikacijskiKod()

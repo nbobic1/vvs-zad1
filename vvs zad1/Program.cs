@@ -47,7 +47,7 @@ namespace vvs_zad1
                                     sdaIs--;
                                 else if (stranke[i].Item2 == "asda")
                                     asdaIs--;
-                                else if (stranke[i].Item2 == "pomak")
+                                else if (stranke[i].Item2 == "Pomak")
                                     pomakIs--;
                             }
                             per = 1;

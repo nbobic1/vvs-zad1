@@ -325,3 +325,7 @@ C:\Users\muris\Source\Repos\vvs-zad1-zadaca\TestIzboriVVS\bin\Debug\net5.0\Micro
 C:\Users\muris\Source\Repos\vvs-zad1-zadaca\TestIzboriVVS\obj\Debug\net5.0\TestIzboriVVS.csproj.CopyComplete
 C:\Users\muris\Source\Repos\vvs-zad1-zadaca\TestIzboriVVS\obj\Debug\net5.0\TestIzboriVVS.genruntimeconfig.cache
 C:\Users\muris\Source\Repos\vvs-zad1-zadaca\TestIzboriVVS\obj\Debug\net5.0\ref\TestIzboriVVS.dll
+C:\Users\Tarik\Documents\GitHub\vvs-zad1\TestIzboriVVS\bin\Debug\net5.0\Glasac.csv
+C:\Users\Tarik\Documents\GitHub\vvs-zad1\TestIzboriVVS\bin\Debug\net5.0\Glasovi.csv
+C:\Users\Tarik\Documents\GitHub\vvs-zad1\TestIzboriVVS\bin\Debug\net5.0\Sifre.csv
+C:\Users\Tarik\Documents\GitHub\vvs-zad1\TestIzboriVVS\bin\Debug\net5.0\CsvHelper.dll

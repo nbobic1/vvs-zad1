@@ -19,6 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Glasac.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Glasovi.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
