@@ -1,7 +1,12 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+Ôªøusing Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System;
 using vvs_zad1;
+using System.IO;
+using CsvHelper;
+using System.Globalization;
+using System.Linq;
+using CsvHelper;
 
 namespace TestIzboriVVS
 {
@@ -92,7 +97,7 @@ namespace TestIzboriVVS
             List<Stranka> rukovodstvoStranke = new List<Stranka>();
             List<Tuple<List<Kandidat>, string>> stranke = new List<Tuple<List<Kandidat>, string>>();
 
-            glasaci.Add(new Glasac("Fatih", "Fatic", "Teöanjska 12", "02.01.1998.", "999E999", "0201199666666"));
+            glasaci.Add(new Glasac("Fatih", "Fatic", "Te≈°anjska 12", "02.01.1998.", "999E999", "0201199666666"));
             glasaci.Add(new Glasac("Mujo", "Mujic", "Zmaja od Bosne 14", "05.01.1995.", "123J123", "0501199666666"));
             glasaci.Add(new Glasac("Huso", "Husic", "Novo Sarajevo", "14.02.1994.", "444K444", "1402199888888"));
             glasaci.Add(new Glasac("Pero", "Peric", "?engi? Vila", "02.04.1998.", "741E147", "0204199555555"));
@@ -102,8 +107,8 @@ namespace TestIzboriVVS
             glasaci.Add(new Glasac("Meho", "Mehic", "Grbavica", "02.01.1998.", "000T000", "0201199888888"));
             glasaci.Add(new Glasac("Benjamin", "Fehic", "Pofali?i", "02.01.1998.", "151T151", "0201199444444"));
             glasaci.Add(new Glasac("Vucko", "Vuckic", "Titova", "21.12.2001.", "444M444", "2112200787878"));
-            glasaci.Add(new Glasac("Meho", "Puzic", "Odûak", "02.01.1937.", "999T999", "0201193555555"));
-            glasaci.Add(new Glasac("Mahir", "Fatic", "Teöanjska 12", "02.06.2001.", "121J121", "0206200444444"));
+            glasaci.Add(new Glasac("Meho", "Puzic", "Od≈æak", "02.01.1937.", "999T999", "0201193555555"));
+            glasaci.Add(new Glasac("Mahir", "Fatic", "Te≈°anjska 12", "02.06.2001.", "121J121", "0206200444444"));
 
 
             List<Kandidat> sda = new List<Kandidat>();
@@ -125,7 +130,7 @@ namespace TestIzboriVVS
 
             sdp.Add(new Kandidat("Munja", "Munji?", true));
             sdp.Add(new Kandidat("Amar", "Gegi?", false));
-            sdp.Add(new Kandidat("Kenan", "Kamenjaö", false));
+            sdp.Add(new Kandidat("Kenan", "Kamenja≈°", false));
             sdp.Add(new Kandidat("Edvin", "Kljalji?", false));
             sdp.Add(new Kandidat("Esad", "Plavi", false));
 
@@ -135,7 +140,7 @@ namespace TestIzboriVVS
             hdz.Add(new Kandidat("Rakan", "Muki?", false));
             hdz.Add(new Kandidat("Ela", "Makedonac", false));
             hdz.Add(new Kandidat("Ilija", "Nugato", false));
-            hdz.Add(new Kandidat("Kakao", "Kamenjaö", false));
+            hdz.Add(new Kandidat("Kakao", "Kamenja≈°", false));
 
             Kandidat asda1 = new Kandidat("Fatka", "Fatki?", true);
             asda1.setDodatniOpis("Kandidat je bio ?lan stranke hdz od 20.3.2005 do 16.2.2008, ?lan stranke sdp od 25.2.2013 do 09.03.2019");
@@ -143,7 +148,7 @@ namespace TestIzboriVVS
             asda.Add(new Kandidat("Frugi?", "Drugar", false));
             asda.Add(new Kandidat("Gospodar", "Fatki?", false));
             asda.Add(new Kandidat("Bilbo", "Bagins", false));
-            asda.Add(new Kandidat("Edin", "Dûeko", false));
+            asda.Add(new Kandidat("Edin", "D≈æeko", false));
 
             pomak.Add(new Kandidat("Romeo", "Lukaku", true));
             pomak.Add(new Kandidat("Cristiano", "Ronaldo", false));
@@ -176,6 +181,48 @@ namespace TestIzboriVVS
             Assert.AreEqual(glasaci.Count, 12);
             Assert.AreEqual(stranke.Count, 6);
             Assert.AreEqual(rukovodstvoStranke.Count, 6);
+            
         }
+
+        public static IEnumerable<object[]> UƒçitajGlasoveCSV()
+        {
+            using (var reader = new StreamReader("Funkcionalnost6.csv"))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+                var rows = csv.GetRecords<dynamic>();
+                foreach (var row in rows)
+                {
+                    var values = ((IDictionary<String, Object>)row).Values;
+                    var elements = values.Select(elem => elem.ToString()).ToList();
+                    var t = elements[0].ToString().Split(" ").ToList().ConvertAll(new Converter<string, int>(toIn1t));
+                    var t1 = elements[elements.Count - 1].ToString().Split(" ").ToList().ConvertAll(new Converter<string, int>(toIn1t));
+                    yield return new object[] { t, t1 };
+                }
+            }
+        }
+        static int toIn1t(string t)
+        {
+            return Int32.Parse(t);
+        }
+        static IEnumerable<object[]> GlasoviCSV
+        {
+            get
+            {
+                return UƒçitajGlasoveCSV();
+            }
+        }
+
+        [TestMethod]
+        [DynamicData("GlasoviCSV")]
+        public void TestFunkcionalnost6(List<int> stranka, List<int> predstavnik)
+        {
+            int broj = 0;
+            for(int i=0; i<stranka.Count; i++)
+            {
+                broj++;
+            }
+            Assert.AreEqual(4, broj);
+        }
+
     }
 }
