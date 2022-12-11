@@ -18,6 +18,8 @@ namespace vvs_zad1
         static List<Kandidat> pobjedniciK = new List<Kandidat>();
         static List<Tuple<List<Kandidat>, string>> stranke = new List<Tuple<List<Kandidat>, string>>();
         static List<Tuple<List<Kandidat>, string>> pobjedniciS = new List<Tuple<List<Kandidat>, string>>();
+        static List<Kandidat> listaKandidata= new List<Kandidat>();
+        static List<Stranka> rukovodstvoStranke= new List<Stranka>();
         public static int brojGlasova()
         {
             return glasaci.FindAll(x => x.getGlasao()).Count;
@@ -117,54 +119,61 @@ namespace vvs_zad1
             glasaci.Add(new Glasac("Mahir", "Fatić", "Tešanjska 12", "02.06.2001."));
 
 
-             List<Kandidat> sda = new List<Kandidat>();
+            List<Kandidat> sda = new List<Kandidat>();
             List<Kandidat> sdp = new List<Kandidat>();
-           List<Kandidat> hdz = new List<Kandidat>();
-             List<Kandidat> asda = new List<Kandidat>();
+            List<Kandidat> hdz = new List<Kandidat>();
+            List<Kandidat> asda = new List<Kandidat>();
             List<Kandidat> pomak = new List<Kandidat>();
-             List<Kandidat> nezavisni = new List<Kandidat>();
+            List<Kandidat> nezavisni = new List<Kandidat>();
 
-            sda.Add(new Kandidat("Hasnija", "Bulić"));
-            sda.Add(new Kandidat("Aki", "Akić"));
-            sda.Add(new Kandidat("Musa", "Nurkić"));
-            sda.Add(new Kandidat("Edin", "Atić"));
-            sda.Add(new Kandidat("Sulejman", "Halilovič"));
+            sda.Add(new Kandidat("Hasnija", "Bulić", true));
+            sda.Add(new Kandidat("Aki", "Akić", false));
+            sda.Add(new Kandidat("Musa", "Nurkić", false));
+            sda.Add(new Kandidat("Edin", "Atić", false));
+            sda.Add(new Kandidat("Sulejman", "Halilovič", false));
 
-            sdp.Add(new Kandidat("Munja", "Munjić"));
-            sdp.Add(new Kandidat("Amar", "Gegić"));
-            sdp.Add(new Kandidat("Kenan", "Kamenjaš"));
-            sdp.Add(new Kandidat("Edvin", "Kljaljić"));
-            sdp.Add(new Kandidat("Esad", "Plavi"));
+            sdp.Add(new Kandidat("Munja", "Munjić", true));
+            sdp.Add(new Kandidat("Amar", "Gegić", false));
+            sdp.Add(new Kandidat("Kenan", "Kamenjaš", false));
+            sdp.Add(new Kandidat("Edvin", "Kljaljić", false));
+            sdp.Add(new Kandidat("Esad", "Plavi", false));
 
-            hdz.Add(new Kandidat("Elon", "Musk"));
-            hdz.Add(new Kandidat("Rakan", "Mukič"));
-            hdz.Add(new Kandidat("Ela", "Makedonac"));
-            hdz.Add(new Kandidat("Ilija", "Nugato"));
-            hdz.Add(new Kandidat("Kakao", "Kamenjaš"));
+            hdz.Add(new Kandidat("Elon", "Musk", true));
+            hdz.Add(new Kandidat("Rakan", "Mukič", false));
+            hdz.Add(new Kandidat("Ela", "Makedonac", false));
+            hdz.Add(new Kandidat("Ilija", "Nugato", false));
+            hdz.Add(new Kandidat("Kakao", "Kamenjaš", false));
 
-            asda.Add(new Kandidat("Fatka", "Fatkić"));
-            asda.Add(new Kandidat("Frugić", "Drugar"));
-            asda.Add(new Kandidat("Gospodar", "Fatkić"));
-            asda.Add(new Kandidat("Bilbo", "Bagins"));
-            asda.Add(new Kandidat("Edin", "Džeko"));
+            asda.Add(new Kandidat("Fatka", "Fatkić", true));
+            asda.Add(new Kandidat("Frugić", "Drugar", false));
+            asda.Add(new Kandidat("Gospodar", "Fatkić", false));
+            asda.Add(new Kandidat("Bilbo", "Bagins", false));
+            asda.Add(new Kandidat("Edin", "Džeko", false));
 
-            pomak.Add(new Kandidat("Romeo", "Lukaku"));
-            pomak.Add(new Kandidat("Cristiano", "Ronaldo"));
-            pomak.Add(new Kandidat("Tejt", "MegregoAr"));
-            pomak.Add(new Kandidat("Kanie", "West"));
-            pomak.Add(new Kandidat("Messi", "Ronaldo"));
+            pomak.Add(new Kandidat("Romeo", "Lukaku", true));
+            pomak.Add(new Kandidat("Cristiano", "Ronaldo", false));
+            pomak.Add(new Kandidat("Tejt", "MegregoAr", false));
+            pomak.Add(new Kandidat("Kanie", "West", false));
+            pomak.Add(new Kandidat("Messi", "Ronaldo", false));
 
-            nezavisni.Add(new Kandidat("Justin", "So"));
-            nezavisni.Add(new Kandidat("Angelina", "Boli"));
-            nezavisni.Add(new Kandidat("Marija", "Ana"));
-            nezavisni.Add(new Kandidat("Bull", "Pit"));
-            nezavisni.Add(new Kandidat("Vojage", "Breskvica"));
+            nezavisni.Add(new Kandidat("Justin", "So", true));
+            nezavisni.Add(new Kandidat("Angelina", "Boli", false));
+            nezavisni.Add(new Kandidat("Marija", "Ana", false));
+            nezavisni.Add(new Kandidat("Bull", "Pit", false));
+            nezavisni.Add(new Kandidat("Vojage", "Breskvica", false));
             stranke.Add(new Tuple<List<Kandidat>, string>(sda, "sda"));
             stranke.Add(new Tuple<List<Kandidat>, string>(pomak, "Pomak"));
             stranke.Add(new Tuple<List<Kandidat>, string>(sdp, "Sdp"));
             stranke.Add(new Tuple<List<Kandidat>, string>(asda, "asda"));
             stranke.Add(new Tuple<List<Kandidat>, string>(hdz, "hdz"));
             stranke.Add(new Tuple<List<Kandidat>, string>(nezavisni, "nezavisni"));
+
+            rukovodstvoStranke.Add(new Stranka(sdp, "sdp"));
+            rukovodstvoStranke.Add(new Stranka(sda, "sda"));
+            rukovodstvoStranke.Add(new Stranka(hdz, "hdz"));
+            rukovodstvoStranke.Add(new Stranka(asda, "asda"));
+            rukovodstvoStranke.Add(new Stranka(pomak, "pomak"));
+            rukovodstvoStranke.Add(new Stranka(nezavisni, "nezavisni"));
 
         }
 
@@ -238,6 +247,42 @@ namespace vvs_zad1
             }
         }
 
+        //Funkcionalnost 6 Benjamin Ažman
+        public static void ispisZaRukovodioca()
+        {
+            for (int i = 0; i < rukovodstvoStranke.Count; i++)
+            {
+                int brojGlasova = 0;
+                var ispisIme = rukovodstvoStranke[i].getKandidatList();
+
+                for (int j = 0; j < ispisIme.Count; j++)
+                {
+                    if (ispisIme[j].getRukovodilac() == true)
+                    {
+                        brojGlasova+= ispisIme[j].getBroj_glasova();
+                    }
+                }
+
+                Console.WriteLine("Ukupan broj glasova: " + brojGlasova + "; Kandidati: ");
+                for (int j=0; j<ispisIme.Count; j++)
+                {
+                    if (ispisIme[j].getRukovodilac() == true)
+                    {
+                        if (j == ispisIme.Count - 1)
+                        {
+                            Console.Write("Identifikacioni broj: " + ispisIme[j].getKod());
+                        }
+                        else
+                        {
+                            Console.Write("Identifikacioni broj: " + ispisIme[j].getKod() + ", ");
+                        }
+                    }
+
+                }
+                Console.WriteLine();
+            }
+        }
+
         static void Main(string[] args)
         {
             pod();
@@ -248,6 +293,7 @@ namespace vvs_zad1
                 Console.WriteLine("Ako želite izaci iz app unesite 3");
                 Console.WriteLine("Ako želite restartovati glasanje za glasaca unesite 4");
                 Console.WriteLine("Ako želite vidjeti trenutno stanje glasnja za stranke unesite 5 ");
+                Console.WriteLine("Ako želite vidjeti rukovodstvo stranaka unesite 6 ");
                 int k = Convert.ToInt32(Console.ReadLine());
                 if (k == 1)
                 {
@@ -288,27 +334,35 @@ namespace vvs_zad1
                                 }
                                 else
                                 {
-                                    string imeStranke = stranke[zu].Item2;
-                                    if (imeStranke.ToLower() == "sda")
+                                    if(zu >= stranke.Count)
                                     {
-                                        sdaIs++;
+                                        break;
                                     }
-                                    else if (imeStranke.ToLower() == "sdp")
+                                    else
                                     {
-                                        sdpIs++;
+                                        string imeStranke = stranke[zu].Item2;
+                                        if (imeStranke.ToLower() == "sda")
+                                        {
+                                            sdaIs++;
+                                        }
+                                        else if (imeStranke.ToLower() == "sdp")
+                                        {
+                                            sdpIs++;
+                                        }
+                                        else if (imeStranke.ToLower() == "hdz")
+                                        {
+                                            hdzIs++;
+                                        }
+                                        else if (imeStranke.ToLower() == "pomak")
+                                        {
+                                            pomakIs++;
+                                        }
+                                        else if (imeStranke.ToLower() == "asda")
+                                        {
+                                            asdaIs++;
+                                        }
                                     }
-                                    else if (imeStranke.ToLower() == "hdz")
-                                    {
-                                        hdzIs++;
-                                    }
-                                    else if (imeStranke.ToLower() == "pomak")
-                                    {
-                                       pomakIs++;
-                                    }
-                                    else if (imeStranke.ToLower() == "asda")
-                                    {
-                                        asdaIs++;
-                                    }
+                                    
                                     break;
                                 }
                             }
@@ -366,7 +420,7 @@ namespace vvs_zad1
                 {
                     statistikaIspis();
                 }
-                else if(k==4)
+                else if (k == 4)
                 {
                     Console.WriteLine("Unesite jedinstveni identifikacioni kod glasaca za kojeg zelite restartovati glasanje: ");
                     string s = Console.ReadLine();
@@ -375,13 +429,13 @@ namespace vvs_zad1
                     {
                         Console.WriteLine("Niste registrirani u ovom biračkom mjestu");
                     }
-                    else if (glasaci[t].getGlasao() == false) 
+                    else if (glasaci[t].getGlasao() == false)
                     {
                         Console.WriteLine("Glasac nije glasao");
                     }
                     else
                     {
-                        for(int zc=0;zc<3;zc++)
+                        for (int zc = 0; zc < 3; zc++)
                         {
 
                             Console.WriteLine("Unesite sifru za restart:");
@@ -389,10 +443,10 @@ namespace vvs_zad1
                             {
                                 glasaci[t].setGlasao(false);
                                 break;
-                               }
+                            }
                             else
                                 Console.WriteLine("Neispravna sifra");
-                               if(zc==2)
+                            if (zc == 2)
                             {
                                 Console.WriteLine("Tri puta unesena pogresna sifra, GRESKA!!");
                                 return;
@@ -404,6 +458,12 @@ namespace vvs_zad1
                 {
                     IspisStranaka();
                 }
+
+                else if (k == 6)
+                {
+                    ispisZaRukovodioca();
+                }
+
                 else if (k == 3)
                     break;
                 else

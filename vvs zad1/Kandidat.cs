@@ -11,11 +11,17 @@ namespace vvs_zad1
         private string ime;
         private string prezime;
         int broj_glasova;
-        public Kandidat(string ime, string prezime)
+
+        private bool rukovodilacStranke;
+        private string identifikacijskiKod;
+        public Kandidat(string ime, string prezime, bool rukovodilacStranke)
         {
             broj_glasova = 0;
             this.ime = ime;
             this.prezime = prezime;
+            if (ime.Length >= 2 && prezime.Length >= 2)
+                this.identifikacijskiKod = ime.Substring(0, 2) + prezime.Substring(0, 2);
+            this.rukovodilacStranke = rukovodilacStranke;
         }
         public int getBroj_glasova()
         { 
@@ -34,5 +40,26 @@ namespace vvs_zad1
         {
             broj_glasova++;
         }
+
+        public string getKod()
+        {
+            return identifikacijskiKod;
+        }
+
+        public void dodajKod(string kod)
+        {
+            this.identifikacijskiKod = kod;
+        }
+
+        public bool getRukovodilac()
+        {
+            return rukovodilacStranke;
+        }
+
+        public void dodajRukovodioca(bool rukovodilac)
+        {
+            this.rukovodilacStranke = rukovodilac;
+        }
+
     }
 }
