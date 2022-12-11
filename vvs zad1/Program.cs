@@ -109,18 +109,18 @@ namespace vvs_zad1
         {
 
 
-            glasaci.Add(new Glasac("Fatih", "Fatić", "Tešanjska 12", "02.01.1998."));
-            glasaci.Add(new Glasac("Mujo", "Mujić", "Zmaja od Bosne 14", "05.01.1995."));
-            glasaci.Add(new Glasac("Huso", "Husić", "Novo Sarajevo", "14.02.1994."));
-            glasaci.Add(new Glasac("Pero", "Perić", "Čengić Vila", "02.04.1998."));
-            glasaci.Add(new Glasac("Hasnija", "Hasnić", "Stup", "02.01.2000."));
-            glasaci.Add(new Glasac("Esmeralda", "Kolašinac", "Fedhima bb", "15.05.1980."));
-            glasaci.Add(new Glasac("Lebron", "James", "Ozimice 2", "14.01.1994."));
-            glasaci.Add(new Glasac("Meho", "Mehić", "Grbavica", "02.01.1998."));
-            glasaci.Add(new Glasac("Benjamin", "Fehić", "Pofalići", "02.01.1998."));
-            glasaci.Add(new Glasac("Vučko", "Vučkić", "Titova", "21.12.2001."));
-            glasaci.Add(new Glasac("Meho", "Puzić", "Odžak", "02.01.1937."));
-            glasaci.Add(new Glasac("Mahir", "Fatić", "Tešanjska 12", "02.06.2001."));
+            glasaci.Add(new Glasac("Fatih", "Fatic", "Tešanjska 12", "02.01.1998.", "999E999", "0201199666666"));
+            glasaci.Add(new Glasac("Mujo", "Mujic", "Zmaja od Bosne 14", "05.01.1995.", "123J123", "0501199666666"));
+            glasaci.Add(new Glasac("Huso", "Husic", "Novo Sarajevo", "14.02.1994.", "444K444", "1402199888888"));
+            glasaci.Add(new Glasac("Pero", "Peric", "Čengić Vila", "02.04.1998.", "741E147", "0204199555555"));
+            glasaci.Add(new Glasac("Hasnija", "Hasnic", "Stup", "02.01.2000.", "151M151", "0201200777777"));
+            glasaci.Add(new Glasac("Esmeralda", "Kolasinac", "Fedhima bb", "15.05.1980.", "999J888", "1505198333333"));
+            glasaci.Add(new Glasac("Lebron", "James", "Ozimice 2", "14.01.1994.", "515T515", "1401199777777"));
+            glasaci.Add(new Glasac("Meho", "Mehic", "Grbavica", "02.01.1998.", "000T000", "0201199888888"));
+            glasaci.Add(new Glasac("Benjamin", "Fehic", "Pofalići", "02.01.1998.", "151T151", "0201199444444"));
+            glasaci.Add(new Glasac("Vucko", "Vuckic", "Titova", "21.12.2001.", "444M444", "2112200787878"));
+            glasaci.Add(new Glasac("Meho", "Puzic", "Odžak", "02.01.1937.", "999T999", "0201193555555"));
+            glasaci.Add(new Glasac("Mahir", "Fatic", "Tešanjska 12", "02.06.2001.", "121J121", "0206200444444"));
 
 
             List<Kandidat> sda = new List<Kandidat>();

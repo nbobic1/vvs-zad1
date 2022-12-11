@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Benjamin\\Source\\Repos\\vvs-zad1\\vvs zad1\\vvs zad1.csproj": {}
+    "C:\\Users\\Tarik\\Documents\\GitHub\\vvs-zad1\\vvs zad1\\vvs zad1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Benjamin\\Source\\Repos\\vvs-zad1\\vvs zad1\\vvs zad1.csproj": {
+    "C:\\Users\\Tarik\\Documents\\GitHub\\vvs-zad1\\vvs zad1\\vvs zad1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Benjamin\\Source\\Repos\\vvs-zad1\\vvs zad1\\vvs zad1.csproj",
+        "projectUniqueName": "C:\\Users\\Tarik\\Documents\\GitHub\\vvs-zad1\\vvs zad1\\vvs zad1.csproj",
         "projectName": "vvs zad1",
-        "projectPath": "C:\\Users\\Benjamin\\Source\\Repos\\vvs-zad1\\vvs zad1\\vvs zad1.csproj",
-        "packagesPath": "C:\\Users\\Benjamin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Benjamin\\Source\\Repos\\vvs-zad1\\vvs zad1\\obj\\",
+        "projectPath": "C:\\Users\\Tarik\\Documents\\GitHub\\vvs-zad1\\vvs zad1\\vvs zad1.csproj",
+        "packagesPath": "C:\\Users\\Tarik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tarik\\Documents\\GitHub\\vvs-zad1\\vvs zad1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Benjamin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tarik\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

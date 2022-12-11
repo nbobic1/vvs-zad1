@@ -10,7 +10,7 @@ namespace TestnaKlasa
         public void TestDaLiSeGlasaloZaKandidata()
         {
             Kandidat k = new Kandidat("Meho", "Mehic", true);
-            Glasac g = new Glasac("Meho", "Mehic", "Dinina 12", "1.1.2001", false);
+            Glasac g = new Glasac("Meho", "Mehic", "Dinina 12", "01.01.2001", "999J999", "0101200666666", false);
 
             k.dodaj_glas(g);
 
