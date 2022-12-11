@@ -214,4 +214,4 @@ C:\Users\bobici\Source\Repos\dina\vvs-zad1\TestIzboriVVS\obj\Debug\net5.0\TestIz
 C:\Users\bobici\Source\Repos\dina\vvs-zad1\TestIzboriVVS\obj\Debug\net5.0\ref\TestIzboriVVS.dll
 C:\Users\bobici\Source\Repos\dina\vvs-zad1\TestIzboriVVS\bin\Debug\net5.0\Sifre.csv
 C:\Users\bobici\Source\Repos\dina\vvs-zad1\TestIzboriVVS\bin\Debug\net5.0\CsvHelper.dll
-C:\Users\bobici\Source\Repos\dina\vvs-zad1\TestIzboriVVS\bin\Debug\net5.0\Glasovi.csv
+C:\Users\bobici\source\repos\dina\vvs-zad1\TestIzboriVVS\bin\Debug\net5.0\Glasovi.csv

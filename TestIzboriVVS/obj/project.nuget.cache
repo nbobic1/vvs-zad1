@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QuI/Z2t+WY0XsLcmDI1wY2rpF77ybxnLyD8i8zWHx4MNn33UiSHza2LtFhLZMKMzARsMfxhnyCwsM+cmzFMGCw==",
+  "dgSpecHash": "ppguOIZyAX4U4ZDcSTg1+U4q4tYP+MRV27of9pVZQFWuxcWhk4ZGuh35kM5yWUneJg5CHTuI3o4fkmBL9KsBTA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bobici\\Source\\Repos\\dina\\vvs-zad1\\TestIzboriVVS\\TestIzboriVVS.csproj",
+  "projectFilePath": "C:\\Users\\bobici\\source\\repos\\dina\\vvs-zad1\\TestIzboriVVS\\TestIzboriVVS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bobici\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\bobici\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",

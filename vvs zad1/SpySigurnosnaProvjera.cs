@@ -6,17 +6,15 @@ using System.Threading.Tasks;
 
 namespace vvs_zad1
 {
-    public class StubSigurnosnaProvjeraTrue : IProvjera
-    {
+    public class SpySigurnosnaProvjera : IProvjera
+    { 
+        public int Opcija { get; set; }
+
         public bool DaLiJeVecGlasao(string IDBroj)
         {
+            if (Opcija == 0)
             return true;
-        }
-    }
-    public class StubSigurnosnaProvjeraFalse : IProvjera
-    {
-        public bool DaLiJeVecGlasao(string IDBroj)
-        {
+        else 
             return false;
         }
     }

@@ -72,6 +72,7 @@ namespace TestIzboriVVS
         {
             Assert.IsFalse(Program.provjeraSifre(sifra));
         }
+
         [TestMethod]
         [DynamicData("GlasoviCSV")]
         public void TestRestartovanjGlasaCSV(int glas, int starn, List<int> glasi)
@@ -80,20 +81,11 @@ namespace TestIzboriVVS
             for (int i = 0; i < glasi.Count; i++)
             {
                 Program.stranke[starn].Item1[glasi[i]].dodaj_glas(Program.glasaci[glas]);
-                if (Program.stranke[starn].Item2 == "hdz")
-                    Program.hdzIs++;
-                else if (Program.stranke[starn].Item2 == "sdp")
-                    Program.sdpIs++;
-                else if (Program.stranke[starn].Item2 == "sda")
-                    Program.sdaIs++;
-                else if (Program.stranke[starn].Item2 == "asda")
-                    Program.asdaIs++;
-                else if (Program.stranke[starn].Item2 == "pomak")
-                    Program.pomakIs++;
             }
-            int z = Program.brojGlasova();
+            int z = Program.brojZaokruzeni();
             Program.restartGlasanje(Program.glasaci[glas], glas);
-            Assert.AreEqual(z-glasi.Count,Program.brojGlasova() );
+            Assert.AreEqual(z-glasi.Count,Program.brojZaokruzeni());
+           
         }
         #endregion
         public static IEnumerable<object[]> UčitajPodatkeCSV(string k)

@@ -63,6 +63,20 @@ namespace vvs_zad1
         {
             return glasaci.FindAll(x => x.getGlasao()).Count;
         }
+        public static int brojZaokruzeni()
+        {int z = 0;
+            for (int i = 0; i < stranke.Count; i++)
+            {
+                List<Kandidat> t = stranke[i].Item1;
+                string s = stranke[i].Item2;
+                
+                for (int j = 0; j < t.Count; j++)
+                {
+                    z += t[j].getGlasaci().Count;
+                }
+            }
+            return z;
+        }
         public static List<Tuple<String, int>> statistika()
         {
             List<Tuple<String, int>> stat = new List<Tuple<String, int>>();

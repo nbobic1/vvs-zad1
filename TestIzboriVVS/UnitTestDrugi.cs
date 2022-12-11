@@ -12,14 +12,12 @@ namespace TestIzboriVVS
     public class UnitTestDrugi
     {
         static Glasac glasac;
-        static StubSigurnosnaProvjeraFalse stubf;
-        static StubSigurnosnaProvjeraTrue stubt;
+        static SpySigurnosnaProvjera spy;
 
         [ClassInitialize]
         public static void inicijalizacija(TestContext context)
         {
-           stubf=new StubSigurnosnaProvjeraFalse();
-            stubt=new StubSigurnosnaProvjeraTrue();
+           spy=new SpySigurnosnaProvjera();
         }
         [TestInitialize]
         public void InicijalizacijaPrijeSvakogTesta()
@@ -28,18 +26,15 @@ namespace TestIzboriVVS
         }
         #region inline testovi
         [TestMethod]
-        public void VjerodostojnostGlasacaTest()
-        {
-            Assert.IsTrue(glasac.VjerodostojnostGlasaca(stubf));
-        }
-
-        [TestMethod]
         [ExpectedException(typeof(Exception))]
-        public void ProvjeraIspravneSifreTest()
+        public void TestZamjenskiObjekat()
         {
+            spy.Opcija = 1;
+            Assert.IsTrue(glasac.VjerodostojnostGlasaca(spy));
             try
             {
-                glasac.VjerodostojnostGlasaca(stubt);
+                spy.Opcija = 0;
+                glasac.VjerodostojnostGlasaca(spy);
             }
             catch (Exception e) { 
             Assert.AreEqual("Glasač je već izvršio glasanje!", e.Message);

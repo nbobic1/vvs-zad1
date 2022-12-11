@@ -6834,11 +6834,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bobici\\Source\\Repos\\dina\\vvs-zad1\\TestIzboriVVS\\TestIzboriVVS.csproj",
+      "projectUniqueName": "C:\\Users\\bobici\\source\\repos\\dina\\vvs-zad1\\TestIzboriVVS\\TestIzboriVVS.csproj",
       "projectName": "TestIzboriVVS",
-      "projectPath": "C:\\Users\\bobici\\Source\\Repos\\dina\\vvs-zad1\\TestIzboriVVS\\TestIzboriVVS.csproj",
+      "projectPath": "C:\\Users\\bobici\\source\\repos\\dina\\vvs-zad1\\TestIzboriVVS\\TestIzboriVVS.csproj",
       "packagesPath": "C:\\Users\\bobici\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bobici\\Source\\Repos\\dina\\vvs-zad1\\TestIzboriVVS\\obj\\",
+      "outputPath": "C:\\Users\\bobici\\source\\repos\\dina\\vvs-zad1\\TestIzboriVVS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bobici\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6855,8 +6855,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\bobici\\Source\\Repos\\dina\\vvs-zad1\\vvs zad1\\vvs zad1.csproj": {
-              "projectPath": "C:\\Users\\bobici\\Source\\Repos\\dina\\vvs-zad1\\vvs zad1\\vvs zad1.csproj"
+            "C:\\Users\\bobici\\source\\repos\\dina\\vvs-zad1\\vvs zad1\\vvs zad1.csproj": {
+              "projectPath": "C:\\Users\\bobici\\source\\repos\\dina\\vvs-zad1\\vvs zad1\\vvs zad1.csproj"
             }
           }
         }
