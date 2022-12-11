@@ -1060,19 +1060,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Benjamin\\.nuget\\packages\\": {}
+    "C:\\Users\\bobici\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Benjamin\\Source\\Repos\\vvs-zad1\\vvs zad1\\vvs zad1.csproj",
+      "projectUniqueName": "C:\\Users\\bobici\\Source\\Repos\\vvs\\vvs-zad1\\vvs zad1\\vvs zad1.csproj",
       "projectName": "vvs zad1",
-      "projectPath": "C:\\Users\\Benjamin\\Source\\Repos\\vvs-zad1\\vvs zad1\\vvs zad1.csproj",
-      "packagesPath": "C:\\Users\\Benjamin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Benjamin\\Source\\Repos\\vvs-zad1\\vvs zad1\\obj\\",
+      "projectPath": "C:\\Users\\bobici\\Source\\Repos\\vvs\\vvs-zad1\\vvs zad1\\vvs zad1.csproj",
+      "packagesPath": "C:\\Users\\bobici\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bobici\\Source\\Repos\\vvs\\vvs-zad1\\vvs zad1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Benjamin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bobici\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

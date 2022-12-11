@@ -20,6 +20,10 @@ namespace vvs_zad1
         static List<Tuple<List<Kandidat>, string>> pobjedniciS = new List<Tuple<List<Kandidat>, string>>();
         static List<Kandidat> listaKandidata= new List<Kandidat>();
         static List<Stranka> rukovodstvoStranke= new List<Stranka>();
+        public static bool provjeraSifre(String a)
+        {
+            return (a == "");
+        }
         public static int brojGlasova()
         {
             return glasaci.FindAll(x => x.getGlasao()).Count;
@@ -368,7 +372,7 @@ namespace vvs_zad1
                             }
                             if (zu >= stranke.Count - 1)
                             {
-                                stranke[stranke.Count - 1].Item1[zu - stranke.Count + 1].dodaj_glas();
+                                stranke[stranke.Count - 1].Item1[zu - stranke.Count + 1].dodaj_glas(glasaci[t]);
                                 glasaci[t].setGlasao(true);
                                 Console.WriteLine("Uspjesno ste glasali!");
                                 if (glasaci.Count == brojGlasova())
@@ -380,7 +384,6 @@ namespace vvs_zad1
                             else
                             {
                                 //ispis kandidata stranke
-
                                 Console.WriteLine("Unesite broj pored kandidata kako bi glasali za istog, a -1 za izlaz");
                                 for (int w = 0; w < stranke[zu].Item1.Count; w++)
                                 {
@@ -400,7 +403,7 @@ namespace vvs_zad1
                                     }
                                     else
                                     {
-                                        stranke[zu].Item1[zr].dodaj_glas();
+                                        stranke[zu].Item1[zr].dodaj_glas(glasaci[t]);
                                     }
                                     Console.WriteLine("Unesite broj pored kandidata kako bi glasali za istog, a -1 za izlaz");
                                 }
@@ -420,6 +423,7 @@ namespace vvs_zad1
                 {
                     statistikaIspis();
                 }
+                //Uradio Nail Bobić 18854
                 else if (k == 4)
                 {
                     Console.WriteLine("Unesite jedinstveni identifikacioni kod glasaca za kojeg zelite restartovati glasanje: ");
@@ -439,9 +443,9 @@ namespace vvs_zad1
                         {
 
                             Console.WriteLine("Unesite sifru za restart:");
-                            if (Console.ReadLine() == "VVS20222023")
+                            if ( provjeraSifre(Console.ReadLine()))
                             {
-                                glasaci[t].setGlasao(false);
+                                restartGlasanje(glasaci[t],t);
                                 break;
                             }
                             else
@@ -471,6 +475,26 @@ namespace vvs_zad1
                     break;
                 else
                     continue;
+            }
+        }
+
+        private static void restartGlasanje(Glasac glasac,int hj)
+        {
+            glasaci[hj].setGlasao(false);
+            for (int i = 0; i < stranke.Count; i++)
+            {
+                  for(int j = 0; j < stranke[i].Item1.Count;j++)
+                {
+                    for(int u = 0; u < stranke[i].Item1[j].getGlasaci().Count;u++)
+                    {
+                        if (stranke[i].Item1[j].getGlasaci()[u].getidentifikacijskiKod()==glasac.getidentifikacijskiKod())
+                        {
+                            List<Glasac> pr = stranke[i].Item1[j].getGlasaci();
+                            pr.RemoveAt(u);
+                            stranke[i].Item1[j].setGlasaci(pr);
+                        }
+                    }
+                }
             }
         }
     }
