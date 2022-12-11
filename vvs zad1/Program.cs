@@ -25,7 +25,7 @@ namespace vvs_zad1
         {
             return (a == "VVS20222023");
         }
-        private static void restartGlasanje(Glasac glasac, int hj)
+        public static void restartGlasanje(Glasac glasac, int hj)
         {
             glasaci[hj].setGlasao(false);
             int per = 0;
