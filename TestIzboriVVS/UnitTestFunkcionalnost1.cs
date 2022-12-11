@@ -8,7 +8,7 @@ using System.Linq;
 using vvs_zad1;
 
 //Esma Dervisevic, 18923
-namespace TestGlasac
+namespace TestIzboriVVS
 {
     [TestClass]
     public class UnitTestFunkcionalnost1

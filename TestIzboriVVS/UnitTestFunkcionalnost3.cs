@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.ExceptionServices;
 
-namespace TestVVS
+namespace TestIzboriVVS
 {
 
     [TestClass()]

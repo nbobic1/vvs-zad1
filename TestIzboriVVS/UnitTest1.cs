@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using vvs_zad1;
 
-namespace TestnaKlasa
+namespace TestIzboriVVS
 {
     [TestClass]
     public class UnitTest1

@@ -41,7 +41,7 @@ namespace vvs_zad1
                             {
                                 if (stranke[i].Item2 == "hdz")
                                     hdzIs--;
-                                else if (stranke[i].Item2 == "sdp")
+                                else if (stranke[i].Item2 == "Sdp")
                                     sdpIs--;
                                 else if (stranke[i].Item2 == "sda")
                                     sdaIs--;
