@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bobici\\Source\\Repos\\proba\\vvs-zad1\\TestIzboriVVS\\TestIzboriVVS.csproj": {}
+    "C:\\Users\\muris\\Source\\Repos\\vvs-zad1zd1zd1\\TestIzboriVVS\\TestIzboriVVS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bobici\\Source\\Repos\\proba\\vvs-zad1\\TestIzboriVVS\\TestIzboriVVS.csproj": {
+    "C:\\Users\\muris\\Source\\Repos\\vvs-zad1zd1zd1\\TestIzboriVVS\\TestIzboriVVS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bobici\\Source\\Repos\\proba\\vvs-zad1\\TestIzboriVVS\\TestIzboriVVS.csproj",
+        "projectUniqueName": "C:\\Users\\muris\\Source\\Repos\\vvs-zad1zd1zd1\\TestIzboriVVS\\TestIzboriVVS.csproj",
         "projectName": "TestIzboriVVS",
-        "projectPath": "C:\\Users\\bobici\\Source\\Repos\\proba\\vvs-zad1\\TestIzboriVVS\\TestIzboriVVS.csproj",
-        "packagesPath": "C:\\Users\\bobici\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bobici\\Source\\Repos\\proba\\vvs-zad1\\TestIzboriVVS\\obj\\",
+        "projectPath": "C:\\Users\\muris\\Source\\Repos\\vvs-zad1zd1zd1\\TestIzboriVVS\\TestIzboriVVS.csproj",
+        "packagesPath": "C:\\Users\\muris\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\muris\\Source\\Repos\\vvs-zad1zd1zd1\\TestIzboriVVS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\bobici\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\muris\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\bobici\\Source\\Repos\\proba\\vvs-zad1\\vvs zad1\\vvs zad1.csproj": {
-                "projectPath": "C:\\Users\\bobici\\Source\\Repos\\proba\\vvs-zad1\\vvs zad1\\vvs zad1.csproj"
+              "C:\\Users\\muris\\Source\\Repos\\vvs-zad1zd1zd1\\vvs zad1\\vvs zad1.csproj": {
+                "projectPath": "C:\\Users\\muris\\Source\\Repos\\vvs-zad1zd1zd1\\vvs zad1\\vvs zad1.csproj"
               }
             }
           }
@@ -47,6 +47,10 @@
             "CsvHelper": {
               "target": "Package",
               "version": "[30.0.1, )"
+            },
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             },
             "MSTest.TestAdapter": {
               "target": "Package",
@@ -85,17 +89,17 @@
         }
       }
     },
-    "C:\\Users\\bobici\\Source\\Repos\\proba\\vvs-zad1\\vvs zad1\\vvs zad1.csproj": {
+    "C:\\Users\\muris\\Source\\Repos\\vvs-zad1zd1zd1\\vvs zad1\\vvs zad1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bobici\\Source\\Repos\\proba\\vvs-zad1\\vvs zad1\\vvs zad1.csproj",
+        "projectUniqueName": "C:\\Users\\muris\\Source\\Repos\\vvs-zad1zd1zd1\\vvs zad1\\vvs zad1.csproj",
         "projectName": "vvs zad1",
-        "projectPath": "C:\\Users\\bobici\\Source\\Repos\\proba\\vvs-zad1\\vvs zad1\\vvs zad1.csproj",
-        "packagesPath": "C:\\Users\\bobici\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bobici\\Source\\Repos\\proba\\vvs-zad1\\vvs zad1\\obj\\",
+        "projectPath": "C:\\Users\\muris\\Source\\Repos\\vvs-zad1zd1zd1\\vvs zad1\\vvs zad1.csproj",
+        "packagesPath": "C:\\Users\\muris\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\muris\\Source\\Repos\\vvs-zad1zd1zd1\\vvs zad1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\bobici\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\muris\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

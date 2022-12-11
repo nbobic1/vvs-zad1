@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.ExceptionServices;
+using CsvHelper;
+using System.Globalization;
 
 namespace TestIzboriVVS
 {
@@ -135,6 +137,27 @@ namespace TestIzboriVVS
                 }
             }
             Assert.AreEqual(2, mandata1);
+        }
+        public static IEnumerable<object[]> UčitajPodatkeCSV()
+        {
+            using (var reader = new StreamReader("Stranke.csv"))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+                var rows = csv.GetRecords<dynamic>();
+                foreach (var row in rows)
+                {
+                    var values = ((IDictionary<String, Object>)row).Values;
+                    var elements = values.Select(elem => elem.ToString()).ToList();
+                    yield return new object[] { elements[0]};
+                }
+            }
+        }
+        static IEnumerable<object[]> StrankeCSV
+        {
+            get
+            {
+                return UčitajPodatkeCSV();
+            }
         }
 
 
