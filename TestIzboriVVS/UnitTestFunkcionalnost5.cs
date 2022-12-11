@@ -1,5 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using System.Formats.Asn1;
+using System.Globalization;
+using System.IO;
+using System;
 using vvs_zad1;
+using CsvHelper;
+using System.Linq;
+using System.Collections;
+using System.Runtime.InteropServices;
 //Nail Bobić 18854
 namespace TestIzboriVVS
 {
@@ -22,6 +31,7 @@ namespace TestIzboriVVS
             Program.glasaci = new System.Collections.Generic.List<Glasac>();
             Program.pod();
         }
+        #region inline testovi
         [TestMethod]
         public void ProvjeraPogresneSifreTest()
         {
@@ -54,5 +64,86 @@ namespace TestIzboriVVS
             Program.restartGlasanje(Program.glasaci[1], 1);
             Assert.AreEqual(1, Program.brojGlasova());
         }
-    }    
+        #endregion
+        #region csv testovi
+        [TestMethod]
+        [DynamicData("SifreCSV")]
+        public void TestProvjeraNeispravneSifreCSV(string sifra)
+        {
+            Assert.IsFalse(Program.provjeraSifre(sifra));
+        }
+        [TestMethod]
+        [DynamicData("GlasoviCSV")]
+        public void TestRestartovanjGlasaCSV(int glas, int starn, List<int> glasi)
+        {
+            Program.glasaci[glas].setGlasao(true);
+            for (int i = 0; i < glasi.Count; i++)
+            {
+                Program.stranke[starn].Item1[glasi[i]].dodaj_glas(Program.glasaci[glas]);
+                if (Program.stranke[starn].Item2 == "hdz")
+                    Program.hdzIs++;
+                else if (Program.stranke[starn].Item2 == "sdp")
+                    Program.sdpIs++;
+                else if (Program.stranke[starn].Item2 == "sda")
+                    Program.sdaIs++;
+                else if (Program.stranke[starn].Item2 == "asda")
+                    Program.asdaIs++;
+                else if (Program.stranke[starn].Item2 == "pomak")
+                    Program.pomakIs++;
+            }
+            int z = Program.brojGlasova();
+            Program.restartGlasanje(Program.glasaci[glas], glas);
+            Assert.AreEqual(z-glasi.Count,Program.brojGlasova() );
+        }
+        #endregion
+        public static IEnumerable<object[]> UčitajPodatkeCSV(string k)
+        {
+            using (var reader = new StreamReader(k))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+                var rows = csv.GetRecords<dynamic>();
+                foreach (var row in rows)
+                {
+                    var values = ((IDictionary<String, Object>)row).Values;
+                    var elements = values.Select(elem => elem.ToString()).ToList();
+                    yield return new object[] { elements[0] };
+                }
+            }
+        }
+        public static IEnumerable<object[]> UčitajGlasoveCSV(string k)
+        {
+            using (var reader = new StreamReader(k))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+                var rows = csv.GetRecords<dynamic>();
+                foreach (var row in rows)
+                {
+                    var values = ((IDictionary<String, Object>)row).Values;
+                    var elements = values.Select(elem => elem.ToString()).ToList();
+                   var t = elements[elements.Count - 1].ToString().Split(" ").ToList().ConvertAll(new Converter<string, int>(toIn1t));
+                   int t1 = toIn1t(elements[0]);
+                    int t2= toIn1t(elements[1]);
+                    yield return new object[] { elements[0], elements[1], elements[2] };
+                }
+            }
+        }
+        static int toIn1t(string t)
+        {
+            return Int32.Parse(t);
+        }
+        static IEnumerable<object[]> SifreCSV
+        {
+            get
+            {
+                return UčitajPodatkeCSV("Sifre.csv");
+            }
+        }
+        static IEnumerable<object[]> GlasoviCSV
+        {
+            get
+            {
+                return UčitajGlasoveCSV("Glasovi.csv");
+            }
+        }
+    }
 }

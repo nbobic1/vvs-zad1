@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "9meYmIT8m8RbesROB/hwR0tI5QVVJZeklsSuFSkRdCqpO9ijFYQ79xn4viDljEe5q8yuIJ0HYnmGrcs2TRFZWQ==",
+  "dgSpecHash": "QuI/Z2t+WY0XsLcmDI1wY2rpF77ybxnLyD8i8zWHx4MNn33UiSHza2LtFhLZMKMzARsMfxhnyCwsM+cmzFMGCw==",
   "success": true,
   "projectFilePath": "C:\\Users\\bobici\\Source\\Repos\\dina\\vvs-zad1\\TestIzboriVVS\\TestIzboriVVS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bobici\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
+    "C:\\Users\\bobici\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
     "C:\\Users\\bobici\\.nuget\\packages\\microsoft.codecoverage\\17.3.2\\microsoft.codecoverage.17.3.2.nupkg.sha512",
     "C:\\Users\\bobici\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
     "C:\\Users\\bobici\\.nuget\\packages\\microsoft.net.test.sdk\\17.3.2\\microsoft.net.test.sdk.17.3.2.nupkg.sha512",

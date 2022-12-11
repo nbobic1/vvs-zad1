@@ -212,3 +212,6 @@ C:\Users\bobici\Source\Repos\dina\vvs-zad1\TestIzboriVVS\obj\Debug\net5.0\refint
 C:\Users\bobici\Source\Repos\dina\vvs-zad1\TestIzboriVVS\obj\Debug\net5.0\TestIzboriVVS.pdb
 C:\Users\bobici\Source\Repos\dina\vvs-zad1\TestIzboriVVS\obj\Debug\net5.0\TestIzboriVVS.genruntimeconfig.cache
 C:\Users\bobici\Source\Repos\dina\vvs-zad1\TestIzboriVVS\obj\Debug\net5.0\ref\TestIzboriVVS.dll
+C:\Users\bobici\Source\Repos\dina\vvs-zad1\TestIzboriVVS\bin\Debug\net5.0\Sifre.csv
+C:\Users\bobici\Source\Repos\dina\vvs-zad1\TestIzboriVVS\bin\Debug\net5.0\CsvHelper.dll
+C:\Users\bobici\Source\Repos\dina\vvs-zad1\TestIzboriVVS\bin\Debug\net5.0\Glasovi.csv
