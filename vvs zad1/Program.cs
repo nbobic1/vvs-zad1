@@ -454,13 +454,16 @@ namespace vvs_zad1
                         }
                     }
                 }
+
                 else if (k == 5)
                 {
+                    //uradio Muris Bobić
                     IspisStranaka();
                 }
 
                 else if (k == 6)
                 {
+                    //uradio Benjamin Ažman
                     ispisZaRukovodioca();
                 }
 

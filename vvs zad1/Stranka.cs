@@ -43,20 +43,5 @@ namespace vvs_zad1
             this.kandidatList = kandidatList;
         }
 
-        /*
-        public void dajInformacijeORukovodiocu()
-        {
-            Console.WriteLine("Rukovodioci su: ");
-            for (int i=0; i<kandidatList.Count; i++)
-            {
-                Console.WriteLine(kandidatList.ElementAt(i).getIme() + " " + kandidatList.ElementAt(i).getPrezime() + " identifikacioni broj: " + kandidatList.ElementAt(i).getKod());
-            }
-        }
-        */
-
-        
-
-
-
     }
 }
