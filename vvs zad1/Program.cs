@@ -7,23 +7,57 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace vvs_zad1
 {
-    internal class Program
+    public class Program
     {
-        static int sdaIs = 0;
-        static int sdpIs = 0;
-        static int hdzIs = 0;
+        public static int sdaIs = 0;
+        public static int sdpIs = 0;
+        public static int hdzIs = 0;
         static int nezavisniIs = 0;
-        static int asdaIs = 0;
-        static int pomakIs = 0;
-        static List<Glasac> glasaci = new List<Glasac>();
+        public static int asdaIs = 0;
+        public static int pomakIs = 0;
+        public  static List<Glasac> glasaci = new List<Glasac>();
         static List<Kandidat> pobjedniciK = new List<Kandidat>();
-        static List<Tuple<List<Kandidat>, string>> stranke = new List<Tuple<List<Kandidat>, string>>();
+        public static List<Tuple<List<Kandidat>, string>> stranke = new List<Tuple<List<Kandidat>, string>>();
         static List<Tuple<List<Kandidat>, string>> pobjedniciS = new List<Tuple<List<Kandidat>, string>>();
         static List<Kandidat> listaKandidata= new List<Kandidat>();
         static List<Stranka> rukovodstvoStranke= new List<Stranka>();
         public static bool provjeraSifre(String a)
         {
-            return (a == "");
+            return (a == "VVS20222023");
+        }
+        private static void restartGlasanje(Glasac glasac, int hj)
+        {
+            glasaci[hj].setGlasao(false);
+            int per = 0;
+            for (int i = 0; i < stranke.Count; i++)
+            {
+                for (int j = 0; j < stranke[i].Item1.Count; j++)
+                {
+                    for (int u = 0; u < stranke[i].Item1[j].getGlasaci().Count; u++)
+                    {
+                        if (stranke[i].Item1[j].getGlasaci()[u].getidentifikacijskiKod() == glasac.getidentifikacijskiKod())
+                        {
+                            if (per == 0)
+                            {
+                                if (stranke[i].Item2 == "hdz")
+                                    hdzIs--;
+                                else if (stranke[i].Item2 == "sdp")
+                                    sdpIs--;
+                                else if (stranke[i].Item2 == "sda")
+                                    sdaIs--;
+                                else if (stranke[i].Item2 == "asda")
+                                    asdaIs--;
+                                else if (stranke[i].Item2 == "pomak")
+                                    pomakIs--;
+                            }
+                            per = 1;
+                            List<Glasac> pr = stranke[i].Item1[j].getGlasaci();
+                            pr.RemoveAt(u);
+                            stranke[i].Item1[j].setGlasaci(pr);
+                        }
+                    }
+                }
+            }
         }
         public static int brojGlasova()
         {
@@ -525,24 +559,6 @@ namespace vvs_zad1
             }
         }
 
-        private static void restartGlasanje(Glasac glasac,int hj)
-        {
-            glasaci[hj].setGlasao(false);
-            for (int i = 0; i < stranke.Count; i++)
-            {
-                  for(int j = 0; j < stranke[i].Item1.Count;j++)
-                {
-                    for(int u = 0; u < stranke[i].Item1[j].getGlasaci().Count;u++)
-                    {
-                        if (stranke[i].Item1[j].getGlasaci()[u].getidentifikacijskiKod()==glasac.getidentifikacijskiKod())
-                        {
-                            List<Glasac> pr = stranke[i].Item1[j].getGlasaci();
-                            pr.RemoveAt(u);
-                            stranke[i].Item1[j].setGlasaci(pr);
-                        }
-                    }
-                }
-            }
-        }
+       
     }
 }
