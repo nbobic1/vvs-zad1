@@ -123,7 +123,7 @@ namespace TestIzboriVVS
                    var t = elements[elements.Count - 1].ToString().Split(" ").ToList().ConvertAll(new Converter<string, int>(toIn1t));
                    int t1 = toIn1t(elements[0]);
                     int t2= toIn1t(elements[1]);
-                    yield return new object[] { elements[0], elements[1], elements[2] };
+                    yield return new object[] { t1, t2,t };
                 }
             }
         }

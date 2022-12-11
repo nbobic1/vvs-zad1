@@ -8,11 +8,19 @@ using System.Threading.Tasks;
 
 namespace vvs_zad1
 {
+
+    
+
     public class Glasac
     {
         bool glasao;
         string ime, prezime, adresa, identifikacijskiKod, datumRodjenja, brojLicneKarte, maticniBroj;
-
+        public bool VjerodostojnostGlasaca(IProvjera sigurnosnaProvjera)
+        {
+            if (sigurnosnaProvjera.DaLiJeVecGlasao(identifikacijskiKod))
+                throw new Exception("Glasač je već izvršio glasanje!");
+            return true;
+        }
         public bool validirajPodatke(string ime, string prezime, string adresa, string datumRodjenja, string brojLicneKarte, string maticniBroj)
         {
             /*Ime i prezime smiju sadržavati samo slova i crticu, a ostale vrste karaktera nisu dozvoljene. */
