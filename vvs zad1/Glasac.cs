@@ -76,6 +76,7 @@ namespace vvs_zad1
 
             if (validacija == false)
                 throw new Exception("Pogrešno uneseni podaci");
+            //            glasaci.Add(new Glasac("Fatih", "Fatic", "Tešanjska 12", "02.01.1998.", "999E999", "0201199666666"));
 
             /*Validacijom se treba pokriti i jedinstveni identifikacioni broj glasača.*/
             if (idKod.Length == 12)

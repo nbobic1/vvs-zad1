@@ -11,9 +11,10 @@ namespace vvs_zad1
         private string ime;
         private string prezime;
         int broj_glasova;
-        private List<Glasac> glasaci ;
+        private List<Glasac> glasaci = new List<Glasac>() ;
         private bool rukovodilacStranke;
         private string identifikacijskiKod;
+        private string dodatniOpis;
         public Kandidat(string ime, string prezime, bool rukovodilacStranke)
         {
             broj_glasova = 0;
@@ -23,6 +24,13 @@ namespace vvs_zad1
                 this.identifikacijskiKod = ime.Substring(0, 2) + prezime.Substring(0, 2);
             this.rukovodilacStranke = rukovodilacStranke;
         }
+        
+        public void setDodatniOpis(string opis) {
+            this.dodatniOpis = opis;
+        }
+        public string? getDodatniOpis() { return dodatniOpis; }
+
+        
         public int getBroj_glasova()
         { 
             return broj_glasova; 
@@ -46,6 +54,7 @@ namespace vvs_zad1
         }
         public void dodaj_glas(Glasac glas)
         {
+            if (glasaci == null) glasaci = new List<Glasac>();
             glasaci.Add(glas);
             broj_glasova++;
         }
