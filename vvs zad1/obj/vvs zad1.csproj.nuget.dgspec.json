@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bobici\\source\\repos\\dina\\vvs-zad1\\vvs zad1\\vvs zad1.csproj": {}
+    "C:\\Users\\muris\\Source\\Repos\\vvs-zad1-zadaca\\vvs zad1\\vvs zad1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bobici\\source\\repos\\dina\\vvs-zad1\\vvs zad1\\vvs zad1.csproj": {
+    "C:\\Users\\muris\\Source\\Repos\\vvs-zad1-zadaca\\vvs zad1\\vvs zad1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bobici\\source\\repos\\dina\\vvs-zad1\\vvs zad1\\vvs zad1.csproj",
+        "projectUniqueName": "C:\\Users\\muris\\Source\\Repos\\vvs-zad1-zadaca\\vvs zad1\\vvs zad1.csproj",
         "projectName": "vvs zad1",
-        "projectPath": "C:\\Users\\bobici\\source\\repos\\dina\\vvs-zad1\\vvs zad1\\vvs zad1.csproj",
-        "packagesPath": "C:\\Users\\bobici\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bobici\\source\\repos\\dina\\vvs-zad1\\vvs zad1\\obj\\",
+        "projectPath": "C:\\Users\\muris\\Source\\Repos\\vvs-zad1-zadaca\\vvs zad1\\vvs zad1.csproj",
+        "packagesPath": "C:\\Users\\muris\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\muris\\Source\\Repos\\vvs-zad1-zadaca\\vvs zad1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\bobici\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\muris\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

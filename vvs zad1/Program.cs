@@ -238,7 +238,8 @@ namespace vvs_zad1
 
         }
 
-        public static void IspisStranaka()
+        //funkcionalnost 3 Bbic Muris
+        public static void ispisStranaka()
         {
             int brojMandata = 0;
             if (brojGlasova() == 0)
@@ -553,7 +554,7 @@ namespace vvs_zad1
                 else if (k == 5)
                 {
                     //uradio Muris Bobić
-                    IspisStranaka();
+                    ispisStranaka();
                 }
 
                 else if (k == 6)
