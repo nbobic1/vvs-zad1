@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +19,11 @@ namespace vvs_zad1
         static List<Kandidat> pobjedniciK = new List<Kandidat>();
         public static List<Tuple<List<Kandidat>, string>> stranke = new List<Tuple<List<Kandidat>, string>>();
         static List<Tuple<List<Kandidat>, string>> pobjedniciS = new List<Tuple<List<Kandidat>, string>>();
-        static List<Kandidat> listaKandidata= new List<Kandidat>();
+        public static List<Kandidat> listaKandidata= new List<Kandidat>();
         static List<Stranka> rukovodstvoStranke= new List<Stranka>();
+        
+        
+        
         public static bool provjeraSifre(String a)
         {
             return (a == "VVS20222023");
@@ -180,10 +183,8 @@ namespace vvs_zad1
             List<Kandidat> nezavisni = new List<Kandidat>();
 
             Kandidat sda1 = new Kandidat("Hasnija", "Bulić", true);
-            sda1.setDodatniOpis("Kandidat je bio član stranke asda od 01.01.2001 do 10.10.2010, član stranke asda od 11.11.2011. do 12.12.2012, član stranke pomak od 15.1.2015 do 17.02.2017");
             sda.Add(sda1);
             Kandidat sda2 = new Kandidat("Edin", "Atić", false);
-            sda2.setDodatniOpis("Kandidat je bio član stranke asda od 25.5.2019 do 10.2.2021");
             sda.Add(sda2);
             sda.Add(new Kandidat("Aki", "Akić", false));
             sda.Add(new Kandidat("Musa", "Nurkić", false));
@@ -196,7 +197,6 @@ namespace vvs_zad1
             sdp.Add(new Kandidat("Esad", "Plavi", false));
 
             Kandidat hdz1=new Kandidat("Elon", "Musk", true);
-            hdz1.setDodatniOpis("Kandidat je bio član stranke pomak od 03.02.2007 do 09.05.2010");
             hdz.Add(hdz1);
             hdz.Add(new Kandidat("Rakan", "Mukič", false));
             hdz.Add(new Kandidat("Ela", "Makedonac", false));
@@ -204,7 +204,6 @@ namespace vvs_zad1
             hdz.Add(new Kandidat("Kakao", "Kamenjaš", false));
 
             Kandidat asda1 = new Kandidat("Fatka", "Fatkić", true);
-            asda1.setDodatniOpis("Kandidat je bio član stranke hdz od 20.3.2005 do 16.2.2008, član stranke sdp od 25.2.2013 do 09.03.2019");
             asda.Add(asda1);
             asda.Add(new Kandidat("Frugić", "Drugar", false));
             asda.Add(new Kandidat("Gospodar", "Fatkić", false));
@@ -235,9 +234,23 @@ namespace vvs_zad1
             rukovodstvoStranke.Add(new Stranka(asda, "asda"));
             rukovodstvoStranke.Add(new Stranka(pomak, "pomak"));
             rukovodstvoStranke.Add(new Stranka(nezavisni, "nezavisni"));
+            zapisiKandidate();
 
         }
+        public  static void zapisiKandidate()
+        {
 
+            
+        List<Kandidat> sviKandidati = new List<Kandidat>();
+
+            for (int i=0; i<stranke.Count; i++) {
+                List<Kandidat> kandidatiStranke = stranke[i].Item1;
+                for (int j=0; j<kandidatiStranke.Count;j++) {
+                    sviKandidati.Add(kandidatiStranke[j]);
+                }
+            }
+            listaKandidata = sviKandidati;
+        }
         //funkcionalnost 3 Bbic Muris
         public static void ispisStranaka()
         {
@@ -298,7 +311,6 @@ namespace vvs_zad1
                     {
                         Console.WriteLine(ert + " osvojio je " + kandidatiStranke[j].getBroj_glasova() + " glasova ,a to je: " + ((kandidatiStranke[j].getBroj_glasova() * 100) / glasoviZaKandidata) + "% -osvaja mandat");
                         brojMandata += 1;
-
                     }
                     else
                         Console.WriteLine(ert + " osvojio je " + kandidatiStranke[j].getBroj_glasova() + " glasova ,a to je: " + ((kandidatiStranke[j].getBroj_glasova() * 100) / glasoviZaKandidata) + "%");
@@ -308,27 +320,52 @@ namespace vvs_zad1
 
             }
         }
-        //Funkcionalnost 2 Dina Kurtalić
-        public static void ispisiProsleStranke() {
-            List<Kandidat> kandidatiSaProslimStrankama = new List<Kandidat>();
-            List<Kandidat> sviKandidati = new List<Kandidat>();
-
-            for (int i=0; i<stranke.Count; i++) {
-                List<Kandidat> kandidatiStranke= stranke[i].Item1;
-                for (int j=0; j<kandidatiStranke.Count;j++) {
-                    sviKandidati.Add(kandidatiStranke[j]);
+        public static string nadjiStranku(Kandidat k)
+        {
+            
+            for (int i=0; i<stranke.Count; i++)
+            {
+                if (stranke[i].Item1.FindAll(e => e.getIme() == k.getIme() && e.getPrezime() == k.getPrezime()).Count != 0)
+                    return stranke[i].Item2;
+            }
+            return "";
+        }
+      /*  public static string izracunajAtribute(string ime, string prezime, string stranka)
+        {
+            string rez = "";
+           rez.Append("Kandidat " + ime + " " +prezime);
+            String dodatniOpis = listaKandidata[i].getDodatniOpis().ToString();
+            var rijeci = dodatniOpis.Split(" ");
+            string stranka, pocetak, kraj;
+            for (int j = 0; j < rijeci.Length; j++)
+            {
+                if (rijeci[j] == "stranke")
+                {
+                    brojac++;
+                    stranka = rijeci[j + 1];
+                    pocetak = rijeci[j + 3];
+                    kraj = rijeci[j + 5];
+                    Console.WriteLine("Stranka: " + stranka + " Clanstvo od: " + pocetak + " Clanstvo do: " + kraj);
                 }
             }
+            Console.WriteLine("\n");
+        }
+      */
+        //Funkcionalnost 2 Dina Kurtalić
+        public static void ispisiProsleStranke() {
 
-            for (int i=0; i<sviKandidati.Count; i++) {
-                if (sviKandidati[i].getDodatniOpis()!=null) {
-                    Kandidat k=sviKandidati[i];
+            int brojac = 0;
+            for (int i=0; i<listaKandidata.Count; i++) {
+                if (listaKandidata[i].getDodatniOpis()!=null) {
+
+                    Kandidat k=listaKandidata[i];
                     Console.WriteLine("Kandidat " + k.getIme() + " " + k.getPrezime());
-                    String dodatniOpis = sviKandidati[i].getDodatniOpis().ToString();
+                    String dodatniOpis = listaKandidata[i].getDodatniOpis().ToString();
                     var rijeci = dodatniOpis.Split(" ");
                     string stranka, pocetak, kraj;
                     for (int j=0; j<rijeci.Length; j++) {
                         if (rijeci[j]=="stranke") {
+                            brojac++;
                             stranka = rijeci[j + 1];
                             pocetak= rijeci[j + 3];
                             kraj = rijeci[j + 5];
@@ -337,7 +374,9 @@ namespace vvs_zad1
                     }
                     Console.WriteLine("\n");
                 }
+
             }
+            if (brojac == 0) Console.WriteLine("Nijedan kandidat nije u prošlosti bio član drugih stranaka");
 
 
         }
@@ -381,6 +420,7 @@ namespace vvs_zad1
         static void Main(string[] args)
         {
             pod();
+            zapisiKandidate();
             while (true)
             {
                 Console.WriteLine("Ako želite glasati unesite 1");
