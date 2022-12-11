@@ -148,9 +148,16 @@ namespace TestIzboriVVS
                 {
                     var values = ((IDictionary<String, Object>)row).Values;
                     var elements = values.Select(elem => elem.ToString()).ToList();
-                    yield return new object[] { elements[0]};
+                    var t = elements[0].ToString().Split(" ").ToList().ConvertAll(new Converter<string, int>(toIn1t));
+                    var t1 = elements[1].ToString().Split(" ").ToList().ConvertAll(new Converter<string, int>(toIn1t));
+                    var t2 = elements[elements.Count - 1].ToString().Split(" ").ToList().ConvertAll(new Converter<string, int>(toIn1t));
+                    yield return new object[] { t, t1 , t2 };
                 }
             }
+        }
+        static int toIn1t(string t)
+        {
+            return Int32.Parse(t);
         }
         static IEnumerable<object[]> StrankeCSV
         {
@@ -158,6 +165,33 @@ namespace TestIzboriVVS
             {
                 return UčitajPodatkeCSV();
             }
+        }
+        [TestMethod]
+        [DynamicData("StrankeCSV")]
+        public void IspisStranakaTest2Csv(List<int> stranka, List<int> glasac, List<int> kandidat)
+        {
+            Program.sdaIs = 0;
+            for(int i=0; i<glasac.Count; i++)
+            {
+                Program.glasaci[i].setGlasao(true);
+            }
+
+            for(int i =0; i<stranka.Count; i++)
+            {
+                if (Program.stranke[stranka[i]].Item2.ToLower() == "sda")
+                {
+                    Program.sdaIs++;
+                }
+                for (int j=0; j< kandidat.Count; j++)
+                {
+                    for(int k=0; k<glasac.Count; k++)
+                    {
+                        Program.stranke[stranka[i]].Item1[kandidat[j]].dodaj_glas(Program.glasaci[glasac[k]]);
+                        
+                    }
+                }    
+            }
+            Assert.AreEqual(stranka.FindAll(e => e==0).Count , Program.sdaIs++);
         }
 
 
