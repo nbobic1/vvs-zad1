@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace vvs_zad1
 {
-    internal class Stranka
+    public class Stranka
     {
         private string naziv;
         private List<Kandidat> kandidatList=new List<Kandidat>();

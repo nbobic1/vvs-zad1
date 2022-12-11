@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace vvs_zad1
 {
-    internal class Kandidat
+    public class Kandidat
     {
         private string ime;
         private string prezime;

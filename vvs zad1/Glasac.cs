@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace vvs_zad1
 {
-    internal class Glasac
+    public class Glasac
     {
         bool glasao;
         string ime, prezime, adresa, identifikacijskiKod, datumRodjenja;
