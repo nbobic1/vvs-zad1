@@ -23,7 +23,7 @@ namespace vvs_zad1
         }
 
         //Esma Dervisevic, 18923
-        public bool validirajPodatke(string ime, string prezime, string adresa, string datumRodjenja, string brojLicneKarte, string maticniBroj)
+        public static bool validirajPodatke(string ime, string prezime, string adresa, string datumRodjenja, string brojLicneKarte, string maticniBroj)
         {
             /*Ime i prezime smiju sadržavati samo slova i crticu, a ostale vrste karaktera nisu dozvoljene. */
             var regexIme = @"^[A-Za-z]+$";
@@ -62,11 +62,7 @@ namespace vvs_zad1
             if (maticniBroj.Length < 13 || maticniBroj.Length > 13)
                 return false;
 
-            foreach (char c in maticniBroj)
-            {
-                if (c < '0' || c > '9')
-                    return false;
-            }
+            if (!Regex.IsMatch(maticniBroj.ToString(), @"^[\d\s]+$")) return false;
 
             var dijeloviDatuma = datumRodjenja.Substring(0, 2) + datumRodjenja.Substring(3, 2) + datumRodjenja.Substring(6, 3);
 

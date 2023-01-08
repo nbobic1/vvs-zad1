@@ -25,7 +25,9 @@ namespace TestIzboriVVS
         [TestMethod]
         public void TestInLineIDKod()
         {
+            int z = 0;
             var idKod = glasac.getidentifikacijskiKod();
+            int m = 0;
             Assert.IsTrue(idKod.Equals("VuVuTi214421"));
         }
 

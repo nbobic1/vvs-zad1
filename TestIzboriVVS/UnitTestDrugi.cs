@@ -17,13 +17,15 @@ namespace TestIzboriVVS
         [ClassInitialize]
         public static void inicijalizacija(TestContext context)
         {
-           spy=new SpySigurnosnaProvjera();
+       
+            spy = new SpySigurnosnaProvjera();
+           
         }
         [TestInitialize]
         public void InicijalizacijaPrijeSvakogTesta()
-        {
+        {     int c = 0;
             glasac = new Glasac("Neko", "Nekic", "ulica", "02.01.1998.", "999E999", "0201199666666");
-        }
+        int k = 0; }
         #region inline testovi
         [TestMethod]
         [ExpectedException(typeof(Exception))]
