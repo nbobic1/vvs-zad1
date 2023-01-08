@@ -59,8 +59,7 @@ namespace vvs_zad1
             if (!match.Success) return false;
 
             /*Matični broj se mora sastojati od 13 brojeva, pri čemu prva dva broja odgovaraju danu, sljedeća dva broja mjesecu, a sljedeća tri broja godini rođenja glasača.*/
-            if (maticniBroj.Length < 13 || maticniBroj.Length > 13)
-                return false;
+            if (maticniBroj.Length!=13) return false;
 
             if (!Regex.IsMatch(maticniBroj.ToString(), @"^[\d\s]+$")) return false;
 
