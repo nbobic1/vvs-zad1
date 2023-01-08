@@ -19,5 +19,19 @@ namespace WhiteBox
 
             Assert.IsFalse(Glasac.validirajPodatke("Nail", "1", "", "", "", ""));
         }
+
+        //Dina Kurtalić 18917
+        [TestMethod]
+        public void TestPut3()
+        {
+            Assert.IsFalse(Glasac.validirajPodatke("a", "Kurtalic", "", "", "", ""));
+        }
+
+        //Dina Kurtalić 18917
+        [TestMethod]
+        public void TestPut4()
+        {
+            Assert.IsFalse(Glasac.validirajPodatke("Dina", "Ku", "", "", "", ""));
+        }
     }
 }
