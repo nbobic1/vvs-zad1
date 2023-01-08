@@ -33,5 +33,17 @@ namespace WhiteBox
         {
             Assert.IsFalse(Glasac.validirajPodatke("Dina", "Ku", "", "", "", ""));
         }
+        //Bobic Muris18769
+        [TestMethod]
+        public void TestPut5()
+        {
+            Assert.IsFalse(Glasac.validirajPodatke("Muris", "Bo", "SA12", "", "", ""));
+        }
+        //Muris Bobic 18769
+        [TestMethod]
+        public void TestPut6()
+        {
+            Assert.IsFalse(Glasac.validirajPodatke("Muri", "Bobi", "Asw", "12.12.2000", "", ""));
+        }
     }
 }
