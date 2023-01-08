@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bobici\\source\\repos\\zad3\\vvs zad1\\vvs zad1.csproj": {}
+    "C:\\Users\\Tarik\\Documents\\GitHub\\vvs-zad1novi\\vvs zad1\\vvs zad1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bobici\\source\\repos\\zad3\\vvs zad1\\vvs zad1.csproj": {
+    "C:\\Users\\Tarik\\Documents\\GitHub\\vvs-zad1novi\\vvs zad1\\vvs zad1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bobici\\source\\repos\\zad3\\vvs zad1\\vvs zad1.csproj",
+        "projectUniqueName": "C:\\Users\\Tarik\\Documents\\GitHub\\vvs-zad1novi\\vvs zad1\\vvs zad1.csproj",
         "projectName": "vvs zad1",
-        "projectPath": "C:\\Users\\bobici\\source\\repos\\zad3\\vvs zad1\\vvs zad1.csproj",
-        "packagesPath": "C:\\Users\\bobici\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bobici\\source\\repos\\zad3\\vvs zad1\\obj\\",
+        "projectPath": "C:\\Users\\Tarik\\Documents\\GitHub\\vvs-zad1novi\\vvs zad1\\vvs zad1.csproj",
+        "packagesPath": "C:\\Users\\Tarik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tarik\\Documents\\GitHub\\vvs-zad1novi\\vvs zad1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\bobici\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tarik\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

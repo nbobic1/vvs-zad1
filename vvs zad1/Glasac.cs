@@ -52,7 +52,7 @@ namespace vvs_zad1
                 return false;
 
             /*Broj lične karte uvijek se sastoji od tačno 7 karaktera u formatu 999A999, pri čemu 9 može biti bilo koji broj, a A bilo koje slovo iz skupa (E, J, K, M, T).*/
-            if (brojLicneKarte.Length < 7 || brojLicneKarte.Length > 7)
+            if (brojLicneKarte.Length == 7)
                 return false;
             var regex = @"^[0-9]{3}[EJKMT][0-9]{3}$";
             var match = Regex.Match(brojLicneKarte, regex, RegexOptions.IgnoreCase);

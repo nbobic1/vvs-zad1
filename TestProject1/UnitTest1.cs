@@ -11,6 +11,7 @@ namespace TestProject1
         public void TestMethod1()
         {
             int c = 0;
+            for(int i = 0; i < 30002500; i++)
             Glasac.validirajPodatke("Meho", "Mahic", "Dinina", "01.01.2001", "999J999", "101200666666");
               int u = 0;
         
