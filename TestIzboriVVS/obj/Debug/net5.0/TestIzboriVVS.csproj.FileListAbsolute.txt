@@ -1012,3 +1012,4 @@ C:\Users\Dina\Source\Repos\vvs-zad1Z3\TestIzboriVVS\obj\Debug\net5.0\refint\Test
 C:\Users\Dina\Source\Repos\vvs-zad1Z3\TestIzboriVVS\obj\Debug\net5.0\TestIzboriVVS.pdb
 C:\Users\Dina\Source\Repos\vvs-zad1Z3\TestIzboriVVS\obj\Debug\net5.0\TestIzboriVVS.genruntimeconfig.cache
 C:\Users\Dina\Source\Repos\vvs-zad1Z3\TestIzboriVVS\obj\Debug\net5.0\ref\TestIzboriVVS.dll
+C:\Users\Benjamin\Source\Repos\vvs-zad1\TestIzboriVVS\bin\Debug\net5.0\Kandidat.csv

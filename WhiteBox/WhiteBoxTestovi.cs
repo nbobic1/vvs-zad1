@@ -4,7 +4,7 @@ using vvs_zad1;
 namespace WhiteBox
 {
     [TestClass]
-    public class UnitTest1
+    public class WhiteBoxTestovi
     {
         //Nail Bobić 18854
         [TestMethod]
@@ -39,11 +39,22 @@ namespace WhiteBox
         {
             Assert.IsFalse(Glasac.validirajPodatke("Muris", "Bo", "SA12", "", "", ""));
         }
-        //Muris Bobic 18769
+        //Benjamin Azman 18789
         [TestMethod]
         public void TestPut6()
         {
             Assert.IsFalse(Glasac.validirajPodatke("Muri", "Bobi", "Asw", "12.12.2000", "", ""));
+        }
+        [TestMethod]
+        public void TestPut7()
+        {
+            Assert.IsFalse(Glasac.validirajPodatke("Benjamin", "Azman", "ES11", "24.12.1999", "", ""));
+        }
+        //Benjamin Azman 18789
+        [TestMethod]
+        public void TestPut8()
+        {
+            Assert.IsFalse(Glasac.validirajPodatke("Benjo", "Azma", "Ferhadija 11", "24.12.1999", "", ""));
         }
     }
 }
