@@ -72,9 +72,12 @@ namespace vvs_zad1
 
             if (!maticniBroj.Contains(dijeloviDatuma))
                 return vrati;
-            vrati = true;
+            else
+            {
+                vrati = true;
+                return vrati;
 
-            return true;
+            }
         }
 
 
