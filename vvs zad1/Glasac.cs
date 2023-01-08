@@ -9,12 +9,18 @@ using System.Threading.Tasks;
 namespace vvs_zad1
 {
 
-    
+
 
     public class Glasac
     {
         bool glasao;
         string ime, prezime, adresa, identifikacijskiKod, datumRodjenja, brojLicneKarte, maticniBroj;
+
+        private static string SastaviIdKod(string ime, string prezime, string adresa, string datumRodjenja, string brojLicneKarte, string maticniBroj)
+        {
+            return ime.Substring(0, 2) + prezime.Substring(0, 2) + adresa.Substring(0, 2) + datumRodjenja.Substring(0, 2) + brojLicneKarte.Substring(0, 2) + maticniBroj.Substring(0, 2);
+        }
+
         public bool VjerodostojnostGlasaca(IProvjera sigurnosnaProvjera)
         {
             if (sigurnosnaProvjera.DaLiJeVecGlasao(identifikacijskiKod))
@@ -62,7 +68,7 @@ namespace vvs_zad1
             if (!match.Success) return false;
 
             /*Matični broj se mora sastojati od 13 brojeva, pri čemu prva dva broja odgovaraju danu, sljedeća dva broja mjesecu, a sljedeća tri broja godini rođenja glasača.*/
-            if (maticniBroj.Length!=13) return false;
+            if (maticniBroj.Length != 13) return false;
 
             if (!Regex.IsMatch(maticniBroj.ToString(), @"^[\d\s]+$")) return false;
 
@@ -80,17 +86,26 @@ namespace vvs_zad1
 
             Boolean validacija = validirajPodatke(ime, prezime, adresa, datumRodjenja, brojLicneKarte, maticniBroj);
 
-            var idKod = ime.Substring(0, 2) + prezime.Substring(0, 2) + adresa.Substring(0, 2) + datumRodjenja.Substring(0, 2) + brojLicneKarte.Substring(0, 2) + maticniBroj.Substring(0, 2);
+            //var idKod = ime.Substring(0, 2) + prezime.Substring(0, 2) + adresa.Substring(0, 2) + datumRodjenja.Substring(0, 2) + brojLicneKarte.Substring(0, 2) + maticniBroj.Substring(0, 2);
+            var idKod = SastaviIdKod(ime, prezime, adresa, datumRodjenja, brojLicneKarte, maticniBroj);
 
-            if (validacija == false)
-                throw new Exception("Pogrešno uneseni podaci");
-            //            glasaci.Add(new Glasac("Fatih", "Fatic", "Tešanjska 12", "02.01.1998.", "999E999", "0201199666666"));
+            try
+            {
+                if (validacija == false)
+                    throw new Exception("Pogrešno uneseni podaci");
+                //            glasaci.Add(new Glasac("Fatih", "Fatic", "Tešanjska 12", "02.01.1998.", "999E999", "0201199666666"));
 
-            /*Validacijom se treba pokriti i jedinstveni identifikacioni broj glasača.*/
-            if (idKod.Length == 12)
-                this.identifikacijskiKod = ime.Substring(0, 2) + prezime.Substring(0, 2) + adresa.Substring(0, 2) + datumRodjenja.Substring(0, 2) + brojLicneKarte.Substring(0, 2) + maticniBroj.Substring(0, 2);
-            else
-                throw new Exception("Pogrešno uneseni podaci OVDJE");
+                /*Validacijom se treba pokriti i jedinstveni identifikacioni broj glasača.*/
+                if (idKod.Length == 12)
+                    this.identifikacijskiKod = ime.Substring(0, 2) + prezime.Substring(0, 2) + adresa.Substring(0, 2) + datumRodjenja.Substring(0, 2) + brojLicneKarte.Substring(0, 2) + maticniBroj.Substring(0, 2);
+                else
+                    throw new Exception("Pogrešno uneseni podaci OVDJE");
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Greška u validaciji podataka: " + e.Message);
+            }
+
             this.ime = ime;
             this.prezime = prezime;
             this.adresa = adresa;
