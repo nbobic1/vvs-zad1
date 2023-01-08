@@ -6872,19 +6872,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Benjamin\\.nuget\\packages\\": {}
+    "C:\\Users\\bobici\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Benjamin\\Source\\Repos\\vvs-zad1\\TestIzboriVVS\\TestIzboriVVS.csproj",
+      "projectUniqueName": "C:\\Users\\bobici\\Source\\Repos\\vvs-zad1azma2\\TestIzboriVVS\\TestIzboriVVS.csproj",
       "projectName": "TestIzboriVVS",
-      "projectPath": "C:\\Users\\Benjamin\\Source\\Repos\\vvs-zad1\\TestIzboriVVS\\TestIzboriVVS.csproj",
-      "packagesPath": "C:\\Users\\Benjamin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Benjamin\\Source\\Repos\\vvs-zad1\\TestIzboriVVS\\obj\\",
+      "projectPath": "C:\\Users\\bobici\\Source\\Repos\\vvs-zad1azma2\\TestIzboriVVS\\TestIzboriVVS.csproj",
+      "packagesPath": "C:\\Users\\bobici\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bobici\\Source\\Repos\\vvs-zad1azma2\\TestIzboriVVS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Benjamin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bobici\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6898,8 +6898,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Benjamin\\Source\\Repos\\vvs-zad1\\vvs zad1\\vvs zad1.csproj": {
-              "projectPath": "C:\\Users\\Benjamin\\Source\\Repos\\vvs-zad1\\vvs zad1\\vvs zad1.csproj"
+            "C:\\Users\\bobici\\Source\\Repos\\vvs-zad1azma2\\vvs zad1\\vvs zad1.csproj": {
+              "projectPath": "C:\\Users\\bobici\\Source\\Repos\\vvs-zad1azma2\\vvs zad1\\vvs zad1.csproj"
             }
           }
         }
@@ -6955,7 +6955,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   },

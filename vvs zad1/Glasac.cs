@@ -27,24 +27,25 @@ namespace vvs_zad1
         public static bool validirajPodatke(string ime, string prezime, string adresa, string datumRodjenja, string brojLicneKarte, string maticniBroj)
         {
             /*Ime i prezime smiju sadržavati samo slova i crticu, a ostale vrste karaktera nisu dozvoljene. */
+            var vrati = false;
             var regexIme = @"^[A-Za-z]+$";
             var regexPrezime = @"^[A-Za-z]+[-]*[A-Za-z]+$";
 
             var matchIme = Regex.Match(ime, regexIme, RegexOptions.IgnoreCase);
-            if (!matchIme.Success) return false;
+            if (!matchIme.Success) return vrati;
 
             var matchPrezime = Regex.Match(prezime, regexPrezime, RegexOptions.IgnoreCase);
-            if (!matchPrezime.Success) return false;
+            if (!matchPrezime.Success) return vrati;
 
             /*Ime se sastoji od minimalno 2, a maksimalno 40 slova,*/
             if (ime.Length < 2 || ime.Length > 40)
-                return false;
+                return vrati;
             /*dok se prezime sastoji od minimalno 3, a maksimalno 50 slova. */
             if (!Enumerable.Range(3, 50).Contains(prezime.Length))
-                return false;
+                return vrati;
             /*Ime, prezime i adresa ne smiju biti prazni. */
             if (string.IsNullOrEmpty(ime) || string.IsNullOrEmpty(prezime))
-                return false;
+                return vrati;
 
             /*Svaki glasač mora biti punoljetan i njegov datum rođenja ne može biti u budućnosti. */
             var godinaString = datumRodjenja.Substring(6, 4);
@@ -53,24 +54,25 @@ namespace vvs_zad1
             var godinePunoljetstva = now.ToString("yyyy");
             var godinKojomPoredimo = Int32.Parse(godinePunoljetstva) - 18;
             if (godinaInt > godinKojomPoredimo)
-                return false;
+                return vrati;
 
             /*Broj lične karte uvijek se sastoji od tačno 7 karaktera u formatu 999A999, pri čemu 9 može biti bilo koji broj, a A bilo koje slovo iz skupa (E, J, K, M, T).*/
             if (brojLicneKarte.Length == 7)
-                return false;
+                return vrati;
             var regex = @"^[0-9]{3}[EJKMT][0-9]{3}$";
             var match = Regex.Match(brojLicneKarte, regex, RegexOptions.IgnoreCase);
-            if (!match.Success) return false;
+            if (!match.Success) return vrati;
 
             /*Matični broj se mora sastojati od 13 brojeva, pri čemu prva dva broja odgovaraju danu, sljedeća dva broja mjesecu, a sljedeća tri broja godini rođenja glasača.*/
-            if (maticniBroj.Length != 13) return false;
+            if (maticniBroj.Length != 13) return vrati;
 
-            if (!Regex.IsMatch(maticniBroj.ToString(), @"^[\d\s]+$")) return false;
+            if (!Regex.IsMatch(maticniBroj.ToString(), @"^[\d\s]+$")) return vrati;
 
             var dijeloviDatuma = datumRodjenja.Substring(0, 2) + datumRodjenja.Substring(3, 2) + datumRodjenja.Substring(6, 3);
 
             if (!maticniBroj.Contains(dijeloviDatuma))
-                return false;
+                return vrati;
+            vrati = true;
 
             return true;
         }
