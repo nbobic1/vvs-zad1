@@ -56,5 +56,19 @@ namespace WhiteBox
         {
             Assert.IsFalse(Glasac.validirajPodatke("Benjo", "Azma", "Ferhadija 11", "24.12.1999", "", ""));
         }
+
+        //Dervišević Esma, 18923
+        [TestMethod]
+        public void TestPut9()
+        {
+            Assert.IsFalse(Glasac.validirajPodatke("Esma", "Dervisevic", "Visoko bb", "28.11.2000", "999T999", "28112005"));
+        }
+
+        //Dervišević Esma, 18923
+        [TestMethod]
+        public void TestPut10()
+        {
+            Assert.IsFalse(Glasac.validirajPodatke("Esma", "Dervisevic", "Visoko bb", "28.11.2000", "999A999", "1234567891111"));
+        }
     }
 }
