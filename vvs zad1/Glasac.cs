@@ -48,7 +48,10 @@ namespace vvs_zad1
             /*Svaki glasač mora biti punoljetan i njegov datum rođenja ne može biti u budućnosti. */
             var godinaString = datumRodjenja.Substring(6, 4);
             var godinaInt = Int32.Parse(godinaString);
-            if (godinaInt > 2004)
+            DateTime now = DateTime.Today;
+            var godinePunoljetstva = now.ToString("yyyy");
+            var godinKojomPoredimo = Int32.Parse(godinePunoljetstva) - 18;
+            if (godinaInt > godinKojomPoredimo)
                 return false;
 
             /*Broj lične karte uvijek se sastoji od tačno 7 karaktera u formatu 999A999, pri čemu 9 može biti bilo koji broj, a A bilo koje slovo iz skupa (E, J, K, M, T).*/
